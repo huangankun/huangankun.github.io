@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="Game Life">
+<meta name="description" content="NO GAME NO LIFE">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ankun Huang">
 <meta property="og:url" content="http://yoursite.com/archives/index.html">
 <meta property="og:site_name" content="Ankun Huang">
-<meta property="og:description" content="Game Life">
+<meta property="og:description" content="NO GAME NO LIFE">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ankun Huang">
-<meta name="twitter:description" content="Game Life">
+<meta name="twitter:description" content="NO GAME NO LIFE">
 
 
 
@@ -347,8 +347,12 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Ankun Huang" />
+            
               <p class="site-author-name" itemprop="name">Ankun Huang</p>
-              <p class="site-description motion-element" itemprop="description">Game Life</p>
+              <p class="site-description motion-element" itemprop="description">NO GAME NO LIFE</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -575,6 +579,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'XuHIs8onClmR8oOqnIXgtNgA-gzGzoHsz# your leancloud application appid',
+        appKey: 'i0UbrqvdJSTGnMLUgHV0XdMe# your leancloud application appkey',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
