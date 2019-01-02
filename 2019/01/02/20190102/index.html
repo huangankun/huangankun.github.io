@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="#如何在邮箱App中设置阿里企业邮件代收#">
+<meta name="description" content="###UAC（User Agent Client）和UAS（User Agent Server）###SIP协议采用Client/Server模型。每一个请求（Request）触发服务器的一个操作；每个操作被称为方法（Method）；每个请求除了指明具体方法外，还携带了一系列的头域（Header field）,这些头域携带了各种业务信息；除了头域外，消息中还可以携带任意类型的消息体（Body），呼">
 <meta name="keywords" content="流媒体协议">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧">
 <meta property="og:url" content="http://yoursite.com/2019/01/02/20190102/index.html">
 <meta property="og:site_name" content="Ankun Huang">
-<meta property="og:description" content="#如何在邮箱App中设置阿里企业邮件代收#">
+<meta property="og:description" content="###UAC（User Agent Client）和UAS（User Agent Server）###SIP协议采用Client/Server模型。每一个请求（Request）触发服务器的一个操作；每个操作被称为方法（Method）；每个请求除了指明具体方法外，还携带了一系列的头域（Header field）,这些头域携带了各种业务信息；除了头域外，消息中还可以携带任意类型的消息体（Body），呼">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/v8oz6Jv.jpg">
-<meta property="og:updated_time" content="2019-01-02T14:30:42.797Z">
+<meta property="og:updated_time" content="2019-01-02T14:38:01.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧">
-<meta name="twitter:description" content="#如何在邮箱App中设置阿里企业邮件代收#">
+<meta name="twitter:description" content="###UAC（User Agent Client）和UAS（User Agent Server）###SIP协议采用Client/Server模型。每一个请求（Request）触发服务器的一个操作；每个操作被称为方法（Method）；每个请求除了指明具体方法外，还携带了一系列的头域（Header field）,这些头域携带了各种业务信息；除了头域外，消息中还可以携带任意类型的消息体（Body），呼">
 <meta name="twitter:image" content="https://i.imgur.com/v8oz6Jv.jpg">
 
 
@@ -396,39 +396,7 @@
       
 
       
-        <p>#如何在邮箱App中设置阿里企业邮件代收#<br><a id="more"></a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:right">协议</th>
-<th style="text-align:center">服务器地址</th>
-<th style="text-align:center">服务器端口号（常规）</th>
-<th style="text-align:center">服务器端口号（加密）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">POP3</td>
-<td style="text-align:center">pop3.mxhichina.com</td>
-<td style="text-align:center">110</td>
-<td style="text-align:center">995</td>
-</tr>
-<tr>
-<td style="text-align:right">SMTP</td>
-<td style="text-align:center">smtp.mxhichina.com</td>
-<td style="text-align:center">25</td>
-<td style="text-align:center">465</td>
-</tr>
-<tr>
-<td style="text-align:right">IMAP</td>
-<td style="text-align:center">imap.mxhichina.com</td>
-<td style="text-align:center">143</td>
-<td style="text-align:center">993</td>
-</tr>
-</tbody>
-</table>
-<p>####<a href="https://www.cnblogs.com/shierfen/p/5997558.html" target="_blank" rel="noopener">MarkdownPad2 表格不显示处理</a>####</p>
-<p>###UAC（User Agent Client）和UAS（User Agent Server）###<br>SIP协议采用Client/Server模型。每一个请求（Request）触发服务器的一个操作；每个操作被称为方法（Method）；每个请求除了指明具体方法外，还携带了一系列的头域（Header field）,这些头域携带了各种业务信息；除了头域外，消息中还可以携带任意类型的消息体（Body），呼叫中最常使用的SDP信息就是通过消息体在Client和Server之间传递的。</p>
+        <p>###UAC（User Agent Client）和UAS（User Agent Server）###<br>SIP协议采用Client/Server模型。每一个请求（Request）触发服务器的一个操作；每个操作被称为方法（Method）；每个请求除了指明具体方法外，还携带了一系列的头域（Header field）,这些头域携带了各种业务信息；除了头域外，消息中还可以携带任意类型的消息体（Body），呼叫中最常使用的SDP信息就是通过消息体在Client和Server之间传递的。</p>
 <p>Server从接收到请求到处理完毕，要回复多个临时响应(Response)，和一个终结响应(Response)，终结响应有且只有一个。请求和他的所有响应构成一个事务（Transaction），一个完整的呼叫过程包含多个事务，比如呼叫建立和呼叫释放就是两个相互独立的事务。用户代理（User Agent）是发起或者接收呼叫的逻辑实体。</p>
 <p>用户代理客户端-UAC（User Agent Client），用于发起请求；用户代理服务器-UAS（User Agent Server），用于接收请求。UAC/UAS的划分是针对一个事务的。在一个呼叫中的多个事务里，UAC和UAS的角色是可以互换的。例如在A和B的呼叫中，A向B发起呼叫，在呼叫建立的事务中，A是UAC，B是UAS；呼叫结束时，B先挂机，在呼叫释放的事务中，B是UAC，A是UAS。换句话说，每个一般的UA都是UAS和UAC的结合体。UA的实际物理形态有：IP Phone，SoftPhone，GateWay……</p>
 <p>Proxy Server作为一个网络逻辑实体代理客户端转发请求或者响应；同Proxy Server类似的还有一种设备是B2BUA，顾名思义，就是背背的两个UA组成的一个逻辑实体，它作为UAS终结一个事务，同时作为UAC发起另外一个事务。Proxy Server同B2BUA相比，Proxy Server是一个事务传递过程中的中间节点，而B2BUA将一个事务转变成另一个事务。</p>
