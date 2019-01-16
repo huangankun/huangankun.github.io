@@ -79,22 +79,22 @@
 
 
 
-<meta name="description" content="#工作总结 ###使用SRS测试hls的直播延时 ####SRS简介SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成">
+<meta name="description" content="工作总结使用SRS测试hls的直播延时SRS简介SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成HLS、转封装成HD">
 <meta name="keywords" content="流媒体服务框架测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SRS测试hls延时2">
 <meta property="og:url" content="http://yoursite.com/2019/01/09/20190115/index.html">
 <meta property="og:site_name" content="Ankun Huang">
-<meta property="og:description" content="#工作总结 ###使用SRS测试hls的直播延时 ####SRS简介SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成">
+<meta property="og:description" content="工作总结使用SRS测试hls的直播延时SRS简介SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成HLS、转封装成HD">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/sTv8LZD.png">
 <meta property="og:image" content="https://i.imgur.com/hk84kCY.png">
 <meta property="og:image" content="https://i.imgur.com/cnp1XB8.png">
 <meta property="og:image" content="https://i.imgur.com/76e2Jom.png">
-<meta property="og:updated_time" content="2019-01-15T11:45:56.250Z">
+<meta property="og:updated_time" content="2019-01-16T00:49:42.761Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SRS测试hls延时2">
-<meta name="twitter:description" content="#工作总结 ###使用SRS测试hls的直播延时 ####SRS简介SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成">
+<meta name="twitter:description" content="工作总结使用SRS测试hls的直播延时SRS简介SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成HLS、转封装成HD">
 <meta name="twitter:image" content="https://i.imgur.com/sTv8LZD.png">
 
 
@@ -399,31 +399,26 @@
       
 
       
-        <p>#工作总结</p>
-<p>###使用SRS测试hls的直播延时</p>
-<p>####SRS简介<br>SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成HLS、转封装成HDS、录制成FLV。SRS包含支大规模集群如CDN业务的关键特性，譬如RTMP多级集群、VHOST虚拟服务器、无中断服务Reload、HTTP-FLV集群。此外，SRS还提供丰富的应用接口，包括HTTP回调、安全策略Security、HTTP API接口、RTMP测速。SRS在源站和CDN集群中都得到了广泛的应用Applications</p>
+        <h1 id="工作总结"><a href="#工作总结" class="headerlink" title="工作总结"></a>工作总结</h1><h3 id="使用SRS测试hls的直播延时"><a href="#使用SRS测试hls的直播延时" class="headerlink" title="使用SRS测试hls的直播延时"></a>使用SRS测试hls的直播延时</h3><h4 id="SRS简介"><a href="#SRS简介" class="headerlink" title="SRS简介"></a>SRS简介</h4><p>SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成HLS、转封装成HDS、录制成FLV。SRS包含支大规模集群如CDN业务的关键特性，譬如RTMP多级集群、VHOST虚拟服务器、无中断服务Reload、HTTP-FLV集群。此外，SRS还提供丰富的应用接口，包括HTTP回调、安全策略Security、HTTP API接口、RTMP测速。SRS在源站和CDN集群中都得到了广泛的应用Applications</p>
 <a id="more"></a>
 <p><strong>PS：SRS只适用于Linux系统，其它系统下的编译需要自行配置相关依赖</strong></p>
 <p><a href="https://github.com/ossrs/srs/wiki/v2_CN_Home" target="_blank" rel="noopener">官方详细wiki</a></p>
-<p>####SRS配置nginx+rtmp module推流</p>
-<p><a href="https://github.com/ossrs/srs/wiki/v2_CN_SampleHLS" target="_blank" rel="noopener">hls部署实例</a></p>
+<h4 id="SRS配置nginx-rtmp-module推流"><a href="#SRS配置nginx-rtmp-module推流" class="headerlink" title="SRS配置nginx+rtmp module推流"></a>SRS配置nginx+rtmp module推流</h4><p><a href="https://github.com/ossrs/srs/wiki/v2_CN_SampleHLS" target="_blank" rel="noopener">hls部署实例</a></p>
 <p>初次编译时的编译坑会报<strong>http-parser-2.1 error或者nginx编译的错误，解决方法同http-parser-2.1 error</strong>：</p>
 <p><a href="https://github.com/ossrs/srs/pull/1256" target="_blank" rel="noopener">Fix compile http-parser-2.1 fallthrouth error in gcc7 #1256</a></p>
-<p>####Windows下ffmpeg推流录屏，测试rtmp模块</p>
-<pre><code>ffmpeg -f gdigrab -i desktop -vcodec libx264 -f flv rtmp://192.168.198.129/live/livestream
+<h4 id="Windows下ffmpeg推流录屏，测试rtmp模块"><a href="#Windows下ffmpeg推流录屏，测试rtmp模块" class="headerlink" title="Windows下ffmpeg推流录屏，测试rtmp模块"></a>Windows下ffmpeg推流录屏，测试rtmp模块</h4><pre><code>ffmpeg -f gdigrab -i desktop -vcodec libx264 -f flv rtmp://192.168.198.129/live/livestream
 </code></pre><p>然后用vlc播放即可</p>
 <p><img src="https://i.imgur.com/sTv8LZD.png" alt=""></p>
 <p>延时：<strong>8.634s</strong></p>
-<p>####Linux下ffmpeg推流录屏,测试rtmp模块<br>安装ffmpeg</p>
+<h4 id="Linux下ffmpeg推流录屏-测试rtmp模块"><a href="#Linux下ffmpeg推流录屏-测试rtmp模块" class="headerlink" title="Linux下ffmpeg推流录屏,测试rtmp模块"></a>Linux下ffmpeg推流录屏,测试rtmp模块</h4><p>安装ffmpeg</p>
 <pre><code>添加源：sudo add-apt-repository ppa:djcj/hybrid
 更新源：sudo apt-get update
 下载安装：sudo apt-get install ffmpeg
 </code></pre><p>录屏命令</p>
 <pre><code>ffmpeg -f x11grab -i :0.0 -vcodec libx264 -f flv rtmp://192.168.198.129/live/livestream
 </code></pre><p>然后用vlc播放即可，RTMP的配置采用的是低延时设置,延时9.142s<br>    <img src="https://i.imgur.com/hk84kCY.png" alt=""></p>
-<p>####Windows下ffmpeg推流录屏，测试hls模块</p>
-<p>在Windows底下播放如图延时：<strong>38.745s</strong><br><img src="https://i.imgur.com/cnp1XB8.png" alt=""></p>
-<p>####Linux下ffmpeg推流录屏，测试hls模块<br>在Linux底下播放如图延时：<strong>20.015s</strong><br><img src="https://i.imgur.com/76e2Jom.png" alt=""></p>
+<h4 id="Windows下ffmpeg推流录屏，测试hls模块"><a href="#Windows下ffmpeg推流录屏，测试hls模块" class="headerlink" title="Windows下ffmpeg推流录屏，测试hls模块"></a>Windows下ffmpeg推流录屏，测试hls模块</h4><p>在Windows底下播放如图延时：<strong>38.745s</strong><br><img src="https://i.imgur.com/cnp1XB8.png" alt=""></p>
+<h4 id="Linux下ffmpeg推流录屏，测试hls模块"><a href="#Linux下ffmpeg推流录屏，测试hls模块" class="headerlink" title="Linux下ffmpeg推流录屏，测试hls模块"></a>Linux下ffmpeg推流录屏，测试hls模块</h4><p>在Linux底下播放如图延时：<strong>20.015s</strong><br><img src="https://i.imgur.com/76e2Jom.png" alt=""></p>
 
       
     </div>
@@ -521,8 +516,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -608,6 +612,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工作总结"><span class="nav-number">1.</span> <span class="nav-text">工作总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用SRS测试hls的直播延时"><span class="nav-number">1.0.1.</span> <span class="nav-text">使用SRS测试hls的直播延时</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SRS简介"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">SRS简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SRS配置nginx-rtmp-module推流"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">SRS配置nginx+rtmp module推流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows下ffmpeg推流录屏，测试rtmp模块"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">Windows下ffmpeg推流录屏，测试rtmp模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux下ffmpeg推流录屏-测试rtmp模块"><span class="nav-number">1.0.1.4.</span> <span class="nav-text">Linux下ffmpeg推流录屏,测试rtmp模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows下ffmpeg推流录屏，测试hls模块"><span class="nav-number">1.0.1.5.</span> <span class="nav-text">Windows下ffmpeg推流录屏，测试hls模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux下ffmpeg推流录屏，测试hls模块"><span class="nav-number">1.0.1.6.</span> <span class="nav-text">Linux下ffmpeg推流录屏，测试hls模块</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

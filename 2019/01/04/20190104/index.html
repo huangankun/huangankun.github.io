@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="#工作总结 3.2、系统标题                                                           图8Systemheader当且仅当pack是第一个数据包时才存在，即PS包头之后就是系统标题。取值0x000001BB的位串，指出系统标题的开始，暂时不需要处理，读取Header Length直接跳过即可。3.3、节目映射流Systemheader当且">
+<meta name="description" content="工作总结3.2、系统标题                                                           图8Systemheader当且仅当pack是第一个数据包时才存在，即PS包头之后就是系统标题。取值0x000001BB的位串，指出系统标题的开始，暂时不需要处理，读取Header Length直接跳过即可。3.3、节目映射流Systemheader当且仅当">
 <meta name="keywords" content="流媒体协议">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧3">
 <meta property="og:url" content="http://yoursite.com/2019/01/04/20190104/index.html">
 <meta property="og:site_name" content="Ankun Huang">
-<meta property="og:description" content="#工作总结 3.2、系统标题                                                           图8Systemheader当且仅当pack是第一个数据包时才存在，即PS包头之后就是系统标题。取值0x000001BB的位串，指出系统标题的开始，暂时不需要处理，读取Header Length直接跳过即可。3.3、节目映射流Systemheader当且">
+<meta property="og:description" content="工作总结3.2、系统标题                                                           图8Systemheader当且仅当pack是第一个数据包时才存在，即PS包头之后就是系统标题。取值0x000001BB的位串，指出系统标题的开始，暂时不需要处理，读取Header Length直接跳过即可。3.3、节目映射流Systemheader当且仅当">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/C3nT1rF.png">
 <meta property="og:image" content="https://i.imgur.com/8iouAkJ.gif">
-<meta property="og:updated_time" content="2019-01-16T00:38:16.013Z">
+<meta property="og:updated_time" content="2019-01-16T00:47:32.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧3">
-<meta name="twitter:description" content="#工作总结 3.2、系统标题                                                           图8Systemheader当且仅当pack是第一个数据包时才存在，即PS包头之后就是系统标题。取值0x000001BB的位串，指出系统标题的开始，暂时不需要处理，读取Header Length直接跳过即可。3.3、节目映射流Systemheader当且">
+<meta name="twitter:description" content="工作总结3.2、系统标题                                                           图8Systemheader当且仅当pack是第一个数据包时才存在，即PS包头之后就是系统标题。取值0x000001BB的位串，指出系统标题的开始，暂时不需要处理，读取Header Length直接跳过即可。3.3、节目映射流Systemheader当且仅当">
 <meta name="twitter:image" content="https://i.imgur.com/C3nT1rF.png">
 
 
@@ -397,8 +397,7 @@
       
 
       
-        <p>#工作总结</p>
-<p>3.2、系统标题<br><img src="https://i.imgur.com/C3nT1rF.png" alt=""><br>                                                           图8<br>Systemheader当且仅当pack是第一个数据包时才存在，即PS包头之后就是系统标题。取值0x000001BB的位串，指出系统标题的开始，暂时不需要处理，读取Header Length直接跳过即可。<br>3.3、节目映射流<br>Systemheader当且仅当pack是第一个数据包时才存在，即系统标题之后就是节目流映射。取值0x000001BC的位串，指出节目流映射的开始，暂时不需要处理，读取Header Length直接跳过即可。前5字节的结构同系统标题，见图8。</p>
+        <h1 id="工作总结"><a href="#工作总结" class="headerlink" title="工作总结"></a>工作总结</h1><p>3.2、系统标题<br><img src="https://i.imgur.com/C3nT1rF.png" alt=""><br>                                                           图8<br>Systemheader当且仅当pack是第一个数据包时才存在，即PS包头之后就是系统标题。取值0x000001BB的位串，指出系统标题的开始，暂时不需要处理，读取Header Length直接跳过即可。<br>3.3、节目映射流<br>Systemheader当且仅当pack是第一个数据包时才存在，即系统标题之后就是节目流映射。取值0x000001BC的位串，指出节目流映射的开始，暂时不需要处理，读取Header Length直接跳过即可。前5字节的结构同系统标题，见图8。</p>
 <a id="more"></a>
 <p>取一段码流分析系统标题和节目映射流</p>
 <pre><code>00 00 01 ba 45 a9 d4 5c 34 0100 5f 6b f8 00 00  ...?E??\4.._k?..
@@ -590,8 +589,17 @@ return val;
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -677,6 +685,22 @@ return val;
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工作总结"><span class="nav-number">1.</span> <span class="nav-text">工作总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

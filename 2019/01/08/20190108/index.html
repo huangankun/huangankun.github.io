@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="#工作总结 ###使用ffmpeg录制屏幕 使用命令行工具ffmpeg来录制屏幕，下面是几个示例">
+<meta name="description" content="工作总结使用ffmpeg录制屏幕使用命令行工具ffmpeg来录制屏幕，下面是几个示例">
 <meta name="keywords" content="流媒体服务框架测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx服务器下测试rtmp、hls延时2">
 <meta property="og:url" content="http://yoursite.com/2019/01/08/20190108/index.html">
 <meta property="og:site_name" content="Ankun Huang">
-<meta property="og:description" content="#工作总结 ###使用ffmpeg录制屏幕 使用命令行工具ffmpeg来录制屏幕，下面是几个示例">
+<meta property="og:description" content="工作总结使用ffmpeg录制屏幕使用命令行工具ffmpeg来录制屏幕，下面是几个示例">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/hHPCMAJ.png">
 <meta property="og:image" content="https://i.imgur.com/elcDn7E.png">
-<meta property="og:updated_time" content="2019-01-16T00:40:18.692Z">
+<meta property="og:updated_time" content="2019-01-16T00:48:01.705Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx服务器下测试rtmp、hls延时2">
-<meta name="twitter:description" content="#工作总结 ###使用ffmpeg录制屏幕 使用命令行工具ffmpeg来录制屏幕，下面是几个示例">
+<meta name="twitter:description" content="工作总结使用ffmpeg录制屏幕使用命令行工具ffmpeg来录制屏幕，下面是几个示例">
 <meta name="twitter:image" content="https://i.imgur.com/hHPCMAJ.png">
 
 
@@ -397,9 +397,7 @@
       
 
       
-        <p>#工作总结</p>
-<p>###使用ffmpeg录制屏幕</p>
-<p>使用命令行工具ffmpeg来录制屏幕，下面是几个示例</p>
+        <h1 id="工作总结"><a href="#工作总结" class="headerlink" title="工作总结"></a>工作总结</h1><h3 id="使用ffmpeg录制屏幕"><a href="#使用ffmpeg录制屏幕" class="headerlink" title="使用ffmpeg录制屏幕"></a>使用ffmpeg录制屏幕</h3><p>使用命令行工具ffmpeg来录制屏幕，下面是几个示例</p>
 <a id="more"></a>
 <p>1) 最简单的抓屏</p>
 <pre><code>ffmpeg -f gdigrab -i desktop out.mpg
@@ -409,8 +407,7 @@
 <pre><code>ffmpeg -f gdigrab -t 10 -r 15 -i desktop -vcodec libvpx-vp9 -s 720x420 vp9-720-420.mkv
 </code></pre><p>4) 以15的帧率抓屏20秒，抓屏范围，以点（100,60）开始，大小600x480，保存为视频格式是264的mp4文件</p>
 <pre><code>ffmpeg -f gdigrab -video_size 600x480 -offset_x 100 -offset_y 60 -t 20 -r 15 -i desktop -vcodec libx264 x264.mp4
-</code></pre><p>###windows下搭建ffmpeg+nginx+rtmp-module搭建实时视频环境</p>
-<p>一、简述：</p>
+</code></pre><h3 id="windows下搭建ffmpeg-nginx-rtmp-module搭建实时视频环境"><a href="#windows下搭建ffmpeg-nginx-rtmp-module搭建实时视频环境" class="headerlink" title="windows下搭建ffmpeg+nginx+rtmp-module搭建实时视频环境"></a>windows下搭建ffmpeg+nginx+rtmp-module搭建实时视频环境</h3><p>一、简述：</p>
 <p>FFmpeg是一套可以用来记录、转换数字音频、视频，并能将其转化为流的开源计算机程序。</p>
 <p>它提供了非常强大的功能，可以完成音视频的编码、解码、转码、视频采集、后处理（抓图、水印、封装/解封装、格式转换等），还有流媒体服务等诸多功能，可以说涵盖了音视频开发中绝大多数的领域。原生的FFmpeg是在Linux环境下开发的，但是通过各种方法（比如交叉编译等）可以使它运行在多种平台环境上，具有比较好的可移植性。</p>
 <p>FFmpeg项目的官方网址为：<a href="https://ffmpeg.org/。" target="_blank" rel="noopener">https://ffmpeg.org/。</a></p>
@@ -474,8 +471,7 @@ http://blog.csdn.net/gold__sun/article/details/50563130
 http://lib.csdn.net/article/liveplay/37929
 
 http://blog.chinaunix.net/uid-26000296-id-5747703.html
-</code></pre><p>###<a href="https://blog.csdn.net/ck_19900710/article/details/78321023" target="_blank" rel="noopener">利用EasyDarwin搭建rtsp服务器</a></p>
-<p>####EasyScreenLive录屏并推送rtsp流，用vlc进行播放<br>EasyScreenLive是由紫鲸云团队开发和运维的一款简单、高效、稳定的集采集、编码、组播、推流和流媒体RTSP服务于一身的同屏功能组件，具低延时，高性能，低丢包率等特点。目前支持Windows，Android两个平台，通过EasyScreenLive我们就可以避免接触到稍显复杂的音视频源采集，编码和流媒体推送以及RTSP/RTP/RTCP/RTMP服务流程，只需要调用EasyScreenLive的几个API接口，就能轻松、稳定地把流媒体音视频数据RTMP推送给EasyDSS等RTMP服务器以及发布RTSP Server服务，RTSP同屏服务支持组播和单播两种模式。</p>
+</code></pre><h3 id="利用EasyDarwin搭建rtsp服务器"><a href="#利用EasyDarwin搭建rtsp服务器" class="headerlink" title="利用EasyDarwin搭建rtsp服务器"></a><a href="https://blog.csdn.net/ck_19900710/article/details/78321023" target="_blank" rel="noopener">利用EasyDarwin搭建rtsp服务器</a></h3><h4 id="EasyScreenLive录屏并推送rtsp流，用vlc进行播放"><a href="#EasyScreenLive录屏并推送rtsp流，用vlc进行播放" class="headerlink" title="EasyScreenLive录屏并推送rtsp流，用vlc进行播放"></a>EasyScreenLive录屏并推送rtsp流，用vlc进行播放</h4><p>EasyScreenLive是由紫鲸云团队开发和运维的一款简单、高效、稳定的集采集、编码、组播、推流和流媒体RTSP服务于一身的同屏功能组件，具低延时，高性能，低丢包率等特点。目前支持Windows，Android两个平台，通过EasyScreenLive我们就可以避免接触到稍显复杂的音视频源采集，编码和流媒体推送以及RTSP/RTP/RTCP/RTMP服务流程，只需要调用EasyScreenLive的几个API接口，就能轻松、稳定地把流媒体音视频数据RTMP推送给EasyDSS等RTMP服务器以及发布RTSP Server服务，RTSP同屏服务支持组播和单播两种模式。</p>
 <p>使用场景：大屏显示投屏，无纸化会议同屏演示，课堂同屏等，可以配合全屏显示，反向模拟触控实现远程控制功能（Android控制Windows，Windows控制Android，Windows控制Windows等）</p>
 <p><img src="https://i.imgur.com/elcDn7E.png" alt="">                    </p>
 
@@ -575,8 +571,17 @@ http://blog.chinaunix.net/uid-26000296-id-5747703.html
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -662,6 +667,22 @@ http://blog.chinaunix.net/uid-26000296-id-5747703.html
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工作总结"><span class="nav-number">1.</span> <span class="nav-text">工作总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用ffmpeg录制屏幕"><span class="nav-number">1.0.1.</span> <span class="nav-text">使用ffmpeg录制屏幕</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#windows下搭建ffmpeg-nginx-rtmp-module搭建实时视频环境"><span class="nav-number">1.0.2.</span> <span class="nav-text">windows下搭建ffmpeg+nginx+rtmp-module搭建实时视频环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用EasyDarwin搭建rtsp服务器"><span class="nav-number">1.0.3.</span> <span class="nav-text">利用EasyDarwin搭建rtsp服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#EasyScreenLive录屏并推送rtsp流，用vlc进行播放"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">EasyScreenLive录屏并推送rtsp流，用vlc进行播放</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

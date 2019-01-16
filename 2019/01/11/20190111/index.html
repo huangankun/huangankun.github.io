@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="#工作总结 ###使用media flash server测试rtmp延时 ####media flash server概述：Adobe Media Server也叫Adobe Flash Media Server（FMS），是Adobe出品的一款流媒体服务器，它使用Adobe传统的流媒体协议RTMP（实时消息协议）提供视频的点播和直播服务。">
+<meta name="description" content="工作总结使用media flash server测试rtmp延时media flash server概述：Adobe Media Server也叫Adobe Flash Media Server（FMS），是Adobe出品的一款流媒体服务器，它使用Adobe传统的流媒体协议RTMP（实时消息协议）提供视频的点播和直播服务。">
 <meta name="keywords" content="流媒体服务框架测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="media flash server测试rtmp延时">
 <meta property="og:url" content="http://yoursite.com/2019/01/11/20190111/index.html">
 <meta property="og:site_name" content="Ankun Huang">
-<meta property="og:description" content="#工作总结 ###使用media flash server测试rtmp延时 ####media flash server概述：Adobe Media Server也叫Adobe Flash Media Server（FMS），是Adobe出品的一款流媒体服务器，它使用Adobe传统的流媒体协议RTMP（实时消息协议）提供视频的点播和直播服务。">
+<meta property="og:description" content="工作总结使用media flash server测试rtmp延时media flash server概述：Adobe Media Server也叫Adobe Flash Media Server（FMS），是Adobe出品的一款流媒体服务器，它使用Adobe传统的流媒体协议RTMP（实时消息协议）提供视频的点播和直播服务。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/Xu7zJXM.png">
 <meta property="og:image" content="https://i.imgur.com/JKr3UGO.png">
@@ -93,10 +93,10 @@
 <meta property="og:image" content="https://i.imgur.com/p4wbGT5.png">
 <meta property="og:image" content="https://i.imgur.com/szD9KKn.png">
 <meta property="og:image" content="https://i.imgur.com/4OrzLr2.png">
-<meta property="og:updated_time" content="2019-01-15T11:46:07.412Z">
+<meta property="og:updated_time" content="2019-01-16T00:48:49.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="media flash server测试rtmp延时">
-<meta name="twitter:description" content="#工作总结 ###使用media flash server测试rtmp延时 ####media flash server概述：Adobe Media Server也叫Adobe Flash Media Server（FMS），是Adobe出品的一款流媒体服务器，它使用Adobe传统的流媒体协议RTMP（实时消息协议）提供视频的点播和直播服务。">
+<meta name="twitter:description" content="工作总结使用media flash server测试rtmp延时media flash server概述：Adobe Media Server也叫Adobe Flash Media Server（FMS），是Adobe出品的一款流媒体服务器，它使用Adobe传统的流媒体协议RTMP（实时消息协议）提供视频的点播和直播服务。">
 <meta name="twitter:image" content="https://i.imgur.com/Xu7zJXM.png">
 
 
@@ -401,16 +401,12 @@
       
 
       
-        <p>#工作总结</p>
-<p>###使用media flash server测试rtmp延时</p>
-<p>####media flash server概述：<br>Adobe Media Server也叫Adobe Flash Media Server（FMS），是Adobe出品的一款流媒体服务器，它使用Adobe传统的流媒体协议RTMP（实时消息协议）提供视频的点播和直播服务。</p>
+        <h1 id="工作总结"><a href="#工作总结" class="headerlink" title="工作总结"></a>工作总结</h1><h3 id="使用media-flash-server测试rtmp延时"><a href="#使用media-flash-server测试rtmp延时" class="headerlink" title="使用media flash server测试rtmp延时"></a>使用media flash server测试rtmp延时</h3><h4 id="media-flash-server概述："><a href="#media-flash-server概述：" class="headerlink" title="media flash server概述："></a>media flash server概述：</h4><p>Adobe Media Server也叫Adobe Flash Media Server（FMS），是Adobe出品的一款流媒体服务器，它使用Adobe传统的流媒体协议RTMP（实时消息协议）提供视频的点播和直播服务。</p>
 <a id="more"></a>
-<p>####安装</p>
-<p>adobe Media Server下载地址：<a href="http://www.adobe.com/support/flashmediaserver/downloads_updaters.html，我下载的是5.0.3版本。" target="_blank" rel="noopener">http://www.adobe.com/support/flashmediaserver/downloads_updaters.html，我下载的是5.0.3版本。</a></p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>adobe Media Server下载地址：<a href="http://www.adobe.com/support/flashmediaserver/downloads_updaters.html，我下载的是5.0.3版本。" target="_blank" rel="noopener">http://www.adobe.com/support/flashmediaserver/downloads_updaters.html，我下载的是5.0.3版本。</a></p>
 <p>安装没什么好说，“下一步”直到安装完成，我安装到了C:\Program Files\Adobe\Adobe Media Server 5。如果非要说两句，那就是一：注册码1652-5826-9939-6068-8981-7289，二：安装过程中，如果电脑之前没安装Apache服务器，建议勾选Apache组件，这样的话，就不需要去单独安装Apache服务器了。这个服务器会在启动Adobe Media Server的时候启动，占用端口号80，名为AMSHttpd，在资源管理器中可以看到，如下图所示。</p>
 <p><img src="https://i.imgur.com/Xu7zJXM.png" alt=""></p>
-<p>####使用</p>
-<p>1.从开始菜单打开服务，如下图所示。</p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>1.从开始菜单打开服务，如下图所示。</p>
 <p><img src="https://i.imgur.com/JKr3UGO.png" alt=""></p>
 <p>Adobe Media Administration Server和Adobe Media Server都要打开。</p>
 <p>2.双击C:\Program Files\Adobe\Adobe Media Server 5\webroot下的index.html，打开测试页面，如下图所示。<br><img src="https://i.imgur.com/XP8JW8Z.png" alt=""></p>
@@ -514,8 +510,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -601,6 +606,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工作总结"><span class="nav-number">1.</span> <span class="nav-text">工作总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用media-flash-server测试rtmp延时"><span class="nav-number">1.0.1.</span> <span class="nav-text">使用media flash server测试rtmp延时</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#media-flash-server概述："><span class="nav-number">1.0.1.1.</span> <span class="nav-text">media flash server概述：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

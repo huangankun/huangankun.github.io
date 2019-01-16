@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="###UAC（User Agent Client）和UAS（User Agent Server）###SIP协议采用Client/Server模型。每一个请求（Request）触发服务器的一个操作；每个操作被称为方法（Method）；每个请求除了指明具体方法外，还携带了一系列的头域（Header field）,这些头域携带了各种业务信息；除了头域外，消息中还可以携带任意类型的消息体（Body），呼">
+<meta name="description" content="UAC（User Agent Client）和UAS（User Agent Server）SIP协议采用Client/Server模型。每一个请求（Request）触发服务器的一个操作；每个操作被称为方法（Method）；每个请求除了指明具体方法外，还携带了一系列的头域（Header field）,这些头域携带了各种业务信息；除了头域外，消息中还可以携带任意类型的消息体（Body），呼叫中最常使用">
 <meta name="keywords" content="流媒体协议">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧">
 <meta property="og:url" content="http://yoursite.com/2019/01/02/20190102/index.html">
 <meta property="og:site_name" content="Ankun Huang">
-<meta property="og:description" content="###UAC（User Agent Client）和UAS（User Agent Server）###SIP协议采用Client/Server模型。每一个请求（Request）触发服务器的一个操作；每个操作被称为方法（Method）；每个请求除了指明具体方法外，还携带了一系列的头域（Header field）,这些头域携带了各种业务信息；除了头域外，消息中还可以携带任意类型的消息体（Body），呼">
+<meta property="og:description" content="UAC（User Agent Client）和UAS（User Agent Server）SIP协议采用Client/Server模型。每一个请求（Request）触发服务器的一个操作；每个操作被称为方法（Method）；每个请求除了指明具体方法外，还携带了一系列的头域（Header field）,这些头域携带了各种业务信息；除了头域外，消息中还可以携带任意类型的消息体（Body），呼叫中最常使用">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/v8oz6Jv.jpg">
-<meta property="og:updated_time" content="2019-01-02T14:38:01.215Z">
+<meta property="og:updated_time" content="2019-01-16T00:46:22.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧">
-<meta name="twitter:description" content="###UAC（User Agent Client）和UAS（User Agent Server）###SIP协议采用Client/Server模型。每一个请求（Request）触发服务器的一个操作；每个操作被称为方法（Method）；每个请求除了指明具体方法外，还携带了一系列的头域（Header field）,这些头域携带了各种业务信息；除了头域外，消息中还可以携带任意类型的消息体（Body），呼">
+<meta name="twitter:description" content="UAC（User Agent Client）和UAS（User Agent Server）SIP协议采用Client/Server模型。每一个请求（Request）触发服务器的一个操作；每个操作被称为方法（Method）；每个请求除了指明具体方法外，还携带了一系列的头域（Header field）,这些头域携带了各种业务信息；除了头域外，消息中还可以携带任意类型的消息体（Body），呼叫中最常使用">
 <meta name="twitter:image" content="https://i.imgur.com/v8oz6Jv.jpg">
 
 
@@ -396,17 +396,14 @@
       
 
       
-        <p>###UAC（User Agent Client）和UAS（User Agent Server）###<br>SIP协议采用Client/Server模型。每一个请求（Request）触发服务器的一个操作；每个操作被称为方法（Method）；每个请求除了指明具体方法外，还携带了一系列的头域（Header field）,这些头域携带了各种业务信息；除了头域外，消息中还可以携带任意类型的消息体（Body），呼叫中最常使用的SDP信息就是通过消息体在Client和Server之间传递的。</p>
+        <h3 id="UAC（User-Agent-Client）和UAS（User-Agent-Server）"><a href="#UAC（User-Agent-Client）和UAS（User-Agent-Server）" class="headerlink" title="UAC（User Agent Client）和UAS（User Agent Server）"></a>UAC（User Agent Client）和UAS（User Agent Server）</h3><p>SIP协议采用Client/Server模型。每一个请求（Request）触发服务器的一个操作；每个操作被称为方法（Method）；每个请求除了指明具体方法外，还携带了一系列的头域（Header field）,这些头域携带了各种业务信息；除了头域外，消息中还可以携带任意类型的消息体（Body），呼叫中最常使用的SDP信息就是通过消息体在Client和Server之间传递的。</p>
+<a id="more"></a>
 <p>Server从接收到请求到处理完毕，要回复多个临时响应(Response)，和一个终结响应(Response)，终结响应有且只有一个。请求和他的所有响应构成一个事务（Transaction），一个完整的呼叫过程包含多个事务，比如呼叫建立和呼叫释放就是两个相互独立的事务。用户代理（User Agent）是发起或者接收呼叫的逻辑实体。</p>
 <p>用户代理客户端-UAC（User Agent Client），用于发起请求；用户代理服务器-UAS（User Agent Server），用于接收请求。UAC/UAS的划分是针对一个事务的。在一个呼叫中的多个事务里，UAC和UAS的角色是可以互换的。例如在A和B的呼叫中，A向B发起呼叫，在呼叫建立的事务中，A是UAC，B是UAS；呼叫结束时，B先挂机，在呼叫释放的事务中，B是UAC，A是UAS。换句话说，每个一般的UA都是UAS和UAC的结合体。UA的实际物理形态有：IP Phone，SoftPhone，GateWay……</p>
 <p>Proxy Server作为一个网络逻辑实体代理客户端转发请求或者响应；同Proxy Server类似的还有一种设备是B2BUA，顾名思义，就是背背的两个UA组成的一个逻辑实体，它作为UAS终结一个事务，同时作为UAC发起另外一个事务。Proxy Server同B2BUA相比，Proxy Server是一个事务传递过程中的中间节点，而B2BUA将一个事务转变成另一个事务。</p>
 <p>在SIP组网中还包括Location Server、Registrar、Redirect Server，分别负责维护地址映射表，注册管理，呼叫重定向。他们和Proxy Server 可以在同一台设备上也可以运行于不同的设备上。SIP Server是Proxy Server、Location Server、Registrar、Redirect Server的总称。SIP Server采用B2BUA模型。接受请求端为UAS端，代理转发或主动发起请求端为UAC端，整个SIPServr为UAC/UAS的组合体。通过UAC/UAS之间消息交互完成会话的建立、改变、结束的阶段。SIP Server协助网关交换媒体信息，但不参与会话建立后媒体流传输。 </p>
-<p>###一个基于 osip 库的 UAC 和 UAS 的代码整理</p>
-<p>####<a href="https://www.cnblogs.com/freezyh/p/7855051.html" target="_blank" rel="noopener">MarkdownPad2使用代码高亮插件</a></p>
-<p>####<a href="https://blog.csdn.net/fengxinlinux/article/details/73719034" target="_blank" rel="noopener">MarkdownPad2使用C++模板时“&lt;&gt;”的内容无法显示</a></p>
-<hr>
-<p>###UAC</p>
-<pre class="prettyprint lang-cpp"> 
+<h3 id="一个基于-osip-库的-UAC-和-UAS-的代码整理"><a href="#一个基于-osip-库的-UAC-和-UAS-的代码整理" class="headerlink" title="一个基于 osip 库的 UAC 和 UAS 的代码整理"></a>一个基于 osip 库的 UAC 和 UAS 的代码整理</h3><h4 id="MarkdownPad2使用代码高亮插件"><a href="#MarkdownPad2使用代码高亮插件" class="headerlink" title="MarkdownPad2使用代码高亮插件"></a><a href="https://www.cnblogs.com/freezyh/p/7855051.html" target="_blank" rel="noopener">MarkdownPad2使用代码高亮插件</a></h4><h4 id="MarkdownPad2使用C-模板时“-lt-gt-”的内容无法显示"><a href="#MarkdownPad2使用C-模板时“-lt-gt-”的内容无法显示" class="headerlink" title="MarkdownPad2使用C++模板时“&lt;&gt;”的内容无法显示"></a><a href="https://blog.csdn.net/fengxinlinux/article/details/73719034" target="_blank" rel="noopener">MarkdownPad2使用C++模板时“&lt;&gt;”的内容无法显示</a></h4><hr>
+<h3 id="UAC"><a href="#UAC" class="headerlink" title="UAC"></a>UAC</h3><pre class="prettyprint lang-cpp"> 
 /**
  * 一个使用了 osip 和 eXosip 库的 UAC 代理客户端的演示程序
  * 
@@ -545,8 +542,7 @@ int main(int argc, char* argv[])
         default:
             cout << "\n\t--> 不支持的命令 <--\n" <<="" endl;="" break;="" }="" return="" 0;="" <="" pre="">
 
-<p>###UAS</p>
-<pre class="prettyprint lang-cpp"> 
+<h3 id="UAS"><a href="#UAS" class="headerlink" title="UAS"></a>UAS</h3><pre class="prettyprint lang-cpp"> 
 /**
  * 一个使用了 osip 和 eXosip 库的 UAS 代理服务端的演示程序
  * 
@@ -749,16 +745,13 @@ int main()
 }
 </pre>
 
-<p>###<a href="http://www.360doc.com/content/11/1009/15/496343_154624612.shtml" target="_blank" rel="noopener">RTP(Real-Time Transport Protocol), RTCP(Real-Time Transport Control Protocol), RSVP(Resource Reservation Protocol)</a></p>
-<p>###<a href="https://baike.baidu.com/item/qos/404053?fr=aladdin" target="_blank" rel="noopener">QoS(Quality of Service)</a><br>QoS（Quality of Service，服务质量）指一个网络能够利用各种基础技术，为指定的网络通信提供更好的服务能力, 是网络的一种安全机制， 是用来解决网络延迟和阻塞等问题的一种技术。 在正常情况下，如果网络只用于特定的无时间限制的应用系统，并不需要QoS，比如Web应用，或E-mail设置等。但是对关键应用和多媒体应用就十分必要。当网络过载或拥塞时，QoS 能确保重要业务量不受延迟或丢弃，同时保证网络的高效运行。在RFC 3644上有对QoS的说明。</p>
-<p>###QoS三种服务模型</p>
-<p><strong>Best-Effort service（尽力而为服务模型）</strong>：Best-Effort服务模型是一个单一的服务模型，也是最简单的服务模型。对Best-Effort服务模型，网络尽最大的可能性来发送报文。但对延时、可靠性等性能不提供任何保证。</p>
+<h3 id="RTP-Real-Time-Transport-Protocol-RTCP-Real-Time-Transport-Control-Protocol-RSVP-Resource-Reservation-Protocol"><a href="#RTP-Real-Time-Transport-Protocol-RTCP-Real-Time-Transport-Control-Protocol-RSVP-Resource-Reservation-Protocol" class="headerlink" title="RTP(Real-Time Transport Protocol), RTCP(Real-Time Transport Control Protocol), RSVP(Resource Reservation Protocol)"></a><a href="http://www.360doc.com/content/11/1009/15/496343_154624612.shtml" target="_blank" rel="noopener">RTP(Real-Time Transport Protocol), RTCP(Real-Time Transport Control Protocol), RSVP(Resource Reservation Protocol)</a></h3><h3 id="QoS-Quality-of-Service"><a href="#QoS-Quality-of-Service" class="headerlink" title="QoS(Quality of Service)"></a><a href="https://baike.baidu.com/item/qos/404053?fr=aladdin" target="_blank" rel="noopener">QoS(Quality of Service)</a></h3><p>QoS（Quality of Service，服务质量）指一个网络能够利用各种基础技术，为指定的网络通信提供更好的服务能力, 是网络的一种安全机制， 是用来解决网络延迟和阻塞等问题的一种技术。 在正常情况下，如果网络只用于特定的无时间限制的应用系统，并不需要QoS，比如Web应用，或E-mail设置等。但是对关键应用和多媒体应用就十分必要。当网络过载或拥塞时，QoS 能确保重要业务量不受延迟或丢弃，同时保证网络的高效运行。在RFC 3644上有对QoS的说明。</p>
+<h3 id="QoS三种服务模型"><a href="#QoS三种服务模型" class="headerlink" title="QoS三种服务模型"></a>QoS三种服务模型</h3><p><strong>Best-Effort service（尽力而为服务模型）</strong>：Best-Effort服务模型是一个单一的服务模型，也是最简单的服务模型。对Best-Effort服务模型，网络尽最大的可能性来发送报文。但对延时、可靠性等性能不提供任何保证。</p>
 <p>Best-Effort服务模型是网络的缺省服务模型，通过FIFO（first in first out 先入先出）队列来实现。它适用于绝大多数网络应用，如FTP、E-Mail等</p>
 <p><strong>Integrated service（综合服务模型，简称Int-Serv）</strong>：Int-Serv服务模型Int-Serv是一个综合服务模型，它可以满足多种QoS需求。该模型使用资源预留协议（RSVP），RSVP运行在从源端到目的端的每个设备上，可以监视每个流，以防止其消耗资源过多。这种体系能够明确区分并保证每一个业务流的服务质量，为网络提供最细粒度化的服务质量区分。</p>
 <p>但是，Inter-Serv模型对设备的要求很高，当网络中的数据流数量很大时，设备的存储和处理能力会遇到很大的压力。Inter-Serv模型可扩展性很差，难以在Internet核心网络实施。</p>
 <p><strong>Differentiated service（区分服务模型，简称Diff-Serv）</strong>：Diff-Serv服务模型Diff-Serv是一个多服务模型，它可以满足不同的QoS需求。与Int-Serv不同，它不需要通知网络为每个业务预留资源。区分服务实现简单，扩展性较好。</p>
-<p>###<a href="https://blog.csdn.net/tq08g2z/article/details/77773129" target="_blank" rel="noopener">Wireshark 抓包分析 RTSP/RTP/RTCP 基本工作过程</a></p>
-<p><img src="https://i.imgur.com/v8oz6Jv.jpg" alt=""></p>
+<h3 id="Wireshark-抓包分析-RTSP-RTP-RTCP-基本工作过程"><a href="#Wireshark-抓包分析-RTSP-RTP-RTCP-基本工作过程" class="headerlink" title="Wireshark 抓包分析 RTSP/RTP/RTCP 基本工作过程"></a><a href="https://blog.csdn.net/tq08g2z/article/details/77773129" target="_blank" rel="noopener">Wireshark 抓包分析 RTSP/RTP/RTCP 基本工作过程</a></h3><p><img src="https://i.imgur.com/v8oz6Jv.jpg" alt=""></p>
 </--\n"></endl;></--\n"></--\n"></--\n"></--\n"></--\n"></--\n"></--\n"></--></--></--></--\n";></--\n\n")></pre>
       
     </div>
@@ -856,8 +849,17 @@ int main()
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -943,6 +945,22 @@ int main()
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#UAC（User-Agent-Client）和UAS（User-Agent-Server）"><span class="nav-number">1.</span> <span class="nav-text">UAC（User Agent Client）和UAS（User Agent Server）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一个基于-osip-库的-UAC-和-UAS-的代码整理"><span class="nav-number">2.</span> <span class="nav-text">一个基于 osip 库的 UAC 和 UAS 的代码整理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MarkdownPad2使用代码高亮插件"><span class="nav-number">2.1.</span> <span class="nav-text">MarkdownPad2使用代码高亮插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MarkdownPad2使用C-模板时“-lt-gt-”的内容无法显示"><span class="nav-number">2.2.</span> <span class="nav-text">MarkdownPad2使用C++模板时“&lt;&gt;”的内容无法显示</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UAC"><span class="nav-number">3.</span> <span class="nav-text">UAC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UAS"><span class="nav-number">4.</span> <span class="nav-text">UAS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RTP-Real-Time-Transport-Protocol-RTCP-Real-Time-Transport-Control-Protocol-RSVP-Resource-Reservation-Protocol"><span class="nav-number">5.</span> <span class="nav-text">RTP(Real-Time Transport Protocol), RTCP(Real-Time Transport Control Protocol), RSVP(Resource Reservation Protocol)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QoS-Quality-of-Service"><span class="nav-number">6.</span> <span class="nav-text">QoS(Quality of Service)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QoS三种服务模型"><span class="nav-number">7.</span> <span class="nav-text">QoS三种服务模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wireshark-抓包分析-RTSP-RTP-RTCP-基本工作过程"><span class="nav-number">8.</span> <span class="nav-text">Wireshark 抓包分析 RTSP/RTP/RTCP 基本工作过程</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

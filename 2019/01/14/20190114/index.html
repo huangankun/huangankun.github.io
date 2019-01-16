@@ -79,23 +79,23 @@
 
 
 
-<meta name="description" content="#工作总结 ###使用SRS测试RTMP的直播延时 ####SRS简介SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装">
+<meta name="description" content="工作总结使用SRS测试RTMP的直播延时SRS简介SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成HLS、转封装成H">
 <meta name="keywords" content="流媒体服务框架测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SRS测试rtmp延时">
 <meta property="og:url" content="http://yoursite.com/2019/01/14/20190114/index.html">
 <meta property="og:site_name" content="Ankun Huang">
-<meta property="og:description" content="#工作总结 ###使用SRS测试RTMP的直播延时 ####SRS简介SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装">
+<meta property="og:description" content="工作总结使用SRS测试RTMP的直播延时SRS简介SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成HLS、转封装成H">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/Ew9nhj3.png">
 <meta property="og:image" content="https://i.imgur.com/75OYdtz.png">
 <meta property="og:image" content="https://i.imgur.com/COXga2c.png">
 <meta property="og:image" content="https://i.imgur.com/i30JXHe.png">
 <meta property="og:image" content="https://i.imgur.com/Z63o89I.png">
-<meta property="og:updated_time" content="2019-01-15T11:46:02.219Z">
+<meta property="og:updated_time" content="2019-01-16T00:49:12.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SRS测试rtmp延时">
-<meta name="twitter:description" content="#工作总结 ###使用SRS测试RTMP的直播延时 ####SRS简介SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装">
+<meta name="twitter:description" content="工作总结使用SRS测试RTMP的直播延时SRS简介SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成HLS、转封装成H">
 <meta name="twitter:image" content="https://i.imgur.com/Ew9nhj3.png">
 
 
@@ -400,22 +400,18 @@
       
 
       
-        <p>#工作总结</p>
-<p>###使用SRS测试RTMP的直播延时</p>
-<p>####SRS简介<br>SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成HLS、转封装成HDS、录制成FLV。SRS包含支大规模集群如CDN业务的关键特性，譬如RTMP多级集群、VHOST虚拟服务器、无中断服务Reload、HTTP-FLV集群。此外，SRS还提供丰富的应用接口，包括HTTP回调、安全策略Security、HTTP API接口、RTMP测速。SRS在源站和CDN集群中都得到了广泛的应用Applications</p>
+        <h1 id="工作总结"><a href="#工作总结" class="headerlink" title="工作总结"></a>工作总结</h1><h3 id="使用SRS测试RTMP的直播延时"><a href="#使用SRS测试RTMP的直播延时" class="headerlink" title="使用SRS测试RTMP的直播延时"></a>使用SRS测试RTMP的直播延时</h3><h4 id="SRS简介"><a href="#SRS简介" class="headerlink" title="SRS简介"></a>SRS简介</h4><p>SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成HLS、转封装成HDS、录制成FLV。SRS包含支大规模集群如CDN业务的关键特性，譬如RTMP多级集群、VHOST虚拟服务器、无中断服务Reload、HTTP-FLV集群。此外，SRS还提供丰富的应用接口，包括HTTP回调、安全策略Security、HTTP API接口、RTMP测速。SRS在源站和CDN集群中都得到了广泛的应用Applications</p>
 <a id="more"></a>
 <p><strong>PS：SRS只适用于Linux系统，其它系统下的编译需要自行配置相关依赖</strong></p>
 <p><a href="https://github.com/ossrs/srs/wiki/v2_CN_Home" target="_blank" rel="noopener">官方详细wiki</a></p>
-<p>####SRS配置RTMP推流</p>
-<p><a href="https://github.com/ossrs/srs/wiki/v1_CN_SampleRTMP" target="_blank" rel="noopener">RTMP部署实例</a></p>
+<h4 id="SRS配置RTMP推流"><a href="#SRS配置RTMP推流" class="headerlink" title="SRS配置RTMP推流"></a>SRS配置RTMP推流</h4><p><a href="https://github.com/ossrs/srs/wiki/v1_CN_SampleRTMP" target="_blank" rel="noopener">RTMP部署实例</a></p>
 <p>初次编译时的编译坑会报<strong>http-parser-2.1 error</strong>：</p>
 <p><a href="https://github.com/ossrs/srs/pull/1256" target="_blank" rel="noopener">Fix compile http-parser-2.1 fallthrouth error in gcc7 #1256</a></p>
-<p>####Windows下ffmpeg推流录屏</p>
-<pre><code>ffmpeg -f gdigrab -i desktop -vcodec libx264 -f flv rtmp://192.168.198.129/live/livestream
+<h4 id="Windows下ffmpeg推流录屏"><a href="#Windows下ffmpeg推流录屏" class="headerlink" title="Windows下ffmpeg推流录屏"></a>Windows下ffmpeg推流录屏</h4><pre><code>ffmpeg -f gdigrab -i desktop -vcodec libx264 -f flv rtmp://192.168.198.129/live/livestream
 </code></pre><p>然后用vlc播放即可</p>
 <p><img src="https://i.imgur.com/Ew9nhj3.png" alt=""></p>
 <p>延时：<strong>13.071s</strong></p>
-<p>####低延时设置<br><a href="https://github.com/ossrs/srs/wiki/v1_CN_LowLatency" target="_blank" rel="noopener">低延时直播应用</a></p>
+<h4 id="低延时设置"><a href="#低延时设置" class="headerlink" title="低延时设置"></a>低延时设置</h4><p><a href="https://github.com/ossrs/srs/wiki/v1_CN_LowLatency" target="_blank" rel="noopener">低延时直播应用</a></p>
 <p>考虑延时较高，根据官方wiki修改<strong>./conf/rtmp.conf</strong>,粘贴如下代码到文本覆盖即可</p>
 <pre><code># the config for srs to delivery RTMP
 # @see https://github.com/ossrs/srs/wiki/v1_CN_SampleRTMP
@@ -442,15 +438,14 @@ gop_cache       off;
 queue_length    10;
 }
 </code></pre><p>再次播放延时如图：<strong>10.26s</strong>，有所改善<br><img src="https://i.imgur.com/75OYdtz.png" alt=""></p>
-<p>####Linux下ffmpeg推流录屏<br>安装ffmpeg</p>
+<h4 id="Linux下ffmpeg推流录屏"><a href="#Linux下ffmpeg推流录屏" class="headerlink" title="Linux下ffmpeg推流录屏"></a>Linux下ffmpeg推流录屏</h4><p>安装ffmpeg</p>
 <pre><code>添加源：sudo add-apt-repository ppa:djcj/hybrid
 更新源：sudo apt-get update
 下载安装：sudo apt-get install ffmpeg
 </code></pre><p>录屏命令</p>
 <pre><code>ffmpeg -f x11grab -i :0.0 -f flv rtmp://192.168.198.129/live/livestream
 </code></pre><p>然后用vlc播放即可，RTMP的配置采用的是低延时设置,延时8.538s<br>    <img src="https://i.imgur.com/COXga2c.png" alt=""></p>
-<p>####官方的RTMP低延时设置，与<a href="https://github.com/ossrs/srs/wiki/v1_CN_LowLatency" target="_blank" rel="noopener">低延时直播应用</a>不同</p>
-<p><a href="https://github.com/ossrs/srs/wiki/v2_CN_SampleRealtime" target="_blank" rel="noopener">RTMP低延时配置</a></p>
+<h4 id="官方的RTMP低延时设置，与低延时直播应用不同"><a href="#官方的RTMP低延时设置，与低延时直播应用不同" class="headerlink" title="官方的RTMP低延时设置，与低延时直播应用不同"></a>官方的RTMP低延时设置，与<a href="https://github.com/ossrs/srs/wiki/v1_CN_LowLatency" target="_blank" rel="noopener">低延时直播应用</a>不同</h4><p><a href="https://github.com/ossrs/srs/wiki/v2_CN_SampleRealtime" target="_blank" rel="noopener">RTMP低延时配置</a></p>
 <p>还是在linux底下播放如图延时：<strong>6.439s</strong>，画质明显变低<br><img src="https://i.imgur.com/i30JXHe.png" alt=""></p>
 <p>在Windows底下播放如图延时：<strong>9.43s</strong><br><img src="https://i.imgur.com/Z63o89I.png" alt=""></p>
 
@@ -550,8 +545,17 @@ queue_length    10;
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -637,6 +641,22 @@ queue_length    10;
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工作总结"><span class="nav-number">1.</span> <span class="nav-text">工作总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用SRS测试RTMP的直播延时"><span class="nav-number">1.0.1.</span> <span class="nav-text">使用SRS测试RTMP的直播延时</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SRS简介"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">SRS简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SRS配置RTMP推流"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">SRS配置RTMP推流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows下ffmpeg推流录屏"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">Windows下ffmpeg推流录屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#低延时设置"><span class="nav-number">1.0.1.4.</span> <span class="nav-text">低延时设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux下ffmpeg推流录屏"><span class="nav-number">1.0.1.5.</span> <span class="nav-text">Linux下ffmpeg推流录屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#官方的RTMP低延时设置，与低延时直播应用不同"><span class="nav-number">1.0.1.6.</span> <span class="nav-text">官方的RTMP低延时设置，与低延时直播应用不同</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

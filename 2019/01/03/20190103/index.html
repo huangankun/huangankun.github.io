@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="#工作总结##1、RTP分析 ###1.1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的 ###1.2、RTP首部详解">
+<meta name="description" content="工作总结 1、RTP分析 1.1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的1.2、RTP首部详解">
 <meta name="keywords" content="流媒体协议">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧2">
 <meta property="og:url" content="http://yoursite.com/2019/01/03/20190103/index.html">
 <meta property="og:site_name" content="Ankun Huang">
-<meta property="og:description" content="#工作总结##1、RTP分析 ###1.1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的 ###1.2、RTP首部详解">
+<meta property="og:description" content="工作总结 1、RTP分析 1.1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的1.2、RTP首部详解">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/22MikCj.png">
 <meta property="og:image" content="https://i.imgur.com/EGuGhBo.png">
@@ -97,10 +97,10 @@
 <meta property="og:image" content="https://i.imgur.com/qH3l0sc.png">
 <meta property="og:image" content="https://i.imgur.com/LG3xzRw.png">
 <meta property="og:image" content="https://i.imgur.com/xNNdmhG.png">
-<meta property="og:updated_time" content="2019-01-15T11:38:35.403Z">
+<meta property="og:updated_time" content="2019-01-16T00:47:09.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧2">
-<meta name="twitter:description" content="#工作总结##1、RTP分析 ###1.1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的 ###1.2、RTP首部详解">
+<meta name="twitter:description" content="工作总结 1、RTP分析 1.1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的1.2、RTP首部详解">
 <meta name="twitter:image" content="https://i.imgur.com/22MikCj.png">
 
 
@@ -405,9 +405,9 @@
       
 
       
-        <h2 id="工作总结"><a href="#工作总结" class="headerlink" title="#工作总结"></a>#工作总结</h2><p>##1、RTP分析<br><img src="https://i.imgur.com/22MikCj.png" alt=""></p>
-<p>###1.1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的</p>
-<p>###1.2、RTP首部详解<br><a id="more"></a></p>
+        <h1 id="工作总结"><a href="#工作总结" class="headerlink" title="工作总结"></a>工作总结</h1><hr>
+<h2 id="1、RTP分析"><a href="#1、RTP分析" class="headerlink" title="1、RTP分析"></a>1、RTP分析</h2><p><img src="https://i.imgur.com/22MikCj.png" alt=""></p>
+<h3 id="1-1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的"><a href="#1-1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的" class="headerlink" title="1.1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的"></a>1.1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的</h3><h3 id="1-2、RTP首部详解"><a href="#1-2、RTP首部详解" class="headerlink" title="1.2、RTP首部详解"></a>1.2、RTP首部详解</h3><a id="more"></a>
 <p>1)        <strong>V(Version)</strong>：RTP协议的版本号，占2位，当前协议版本号为2</p>
 <p>2)        <strong>P(Padding)</strong>：填充标志，占1位，如果P=1，则在该报文的尾部填充一个或多个额外的八位组，它们不是有效载荷的一部分。</p>
 <p>3)        <strong>X(Extension)</strong>：扩展标志，占1位，如果X=1，则在RTP报头后跟有一个扩展报头</p>
@@ -419,8 +419,7 @@
 <p>9)        <strong>同步信源(SSRC)标识符</strong>：占32位，用于标识同步信源。该标识符是随机选择的，参加同一视频会议的两个同步信源不能有相同的SSRC。</p>
 <p>10)    <strong>特约信源(CSRC)标识符</strong>：每个CSRC标识符占32位，可以有0～15个。每个CSRC标识了包含在该RTP报文有效载荷中的所有特约信源。</p>
 <p>注：基本的RTP说明并不定义任何头扩展本身，如果遇到X=1，需要特殊处理</p>
-<p>####1.2.1、码流分析</p>
-<pre><code>(80 e0 00 1e 00 00 d2 f0 00 00 00 00) 41 9b 6b 49     |    €?....??....A?kI
+<h4 id="1-2-1、码流分析"><a href="#1-2-1、码流分析" class="headerlink" title="1.2.1、码流分析"></a>1.2.1、码流分析</h4><pre><code>(80 e0 00 1e 00 00 d2 f0 00 00 00 00) 41 9b 6b 49     |    €?....??....A?kI
 
 e1 0f 26 53 02 1a ff06 59 97 1d d2 2e 8c 50 01         |    ?.&amp;S....Y?.?.?P.
 
@@ -461,8 +460,7 @@ cfc7 5e c8 a9 51 f6 82 65 d6 48 5a 86 b0 e0 8c         |    ??^??Q??e?HZ????
 </code></pre><p><strong>2B 36 B4 F2</strong>转为十进制：725005554<br>与之对应的位数为</p>
 <pre><code>725005554：        同步信源SSRC
 </code></pre><p>经过转换后对应如图所示的分析均能够对应上。</p>
-<p>###1.3、RTP荷载H.264码流</p>
-<p>####1.3.1、H.264基本流的结构<br>  H.264 的基本流（elementary stream,ES）的结构分为两层，包括视频编码层（VCL）和网络适配层（NAL）。视频编码层负责高效的视频内容表示，而网络适配层负责以网络所要求的恰当的方式对数据进行打包和传送。引入NAL并使之与VCL分离带来的好处包括两方面：其一、使信号处理和网络传输分离，VCL 和NAL 可以在不同的处理平台上实现；其二、VCL 和NAL 分离设计，使得在不同的网络环境内，网关不需要因为网络环境不同而对VCL比特流进行重构和重编码。</p>
+<h3 id="1-3、RTP荷载H-264码流"><a href="#1-3、RTP荷载H-264码流" class="headerlink" title="1.3、RTP荷载H.264码流"></a>1.3、RTP荷载H.264码流</h3><h4 id="1-3-1、H-264基本流的结构"><a href="#1-3-1、H-264基本流的结构" class="headerlink" title="1.3.1、H.264基本流的结构"></a>1.3.1、H.264基本流的结构</h4><p>  H.264 的基本流（elementary stream,ES）的结构分为两层，包括视频编码层（VCL）和网络适配层（NAL）。视频编码层负责高效的视频内容表示，而网络适配层负责以网络所要求的恰当的方式对数据进行打包和传送。引入NAL并使之与VCL分离带来的好处包括两方面：其一、使信号处理和网络传输分离，VCL 和NAL 可以在不同的处理平台上实现；其二、VCL 和NAL 分离设计，使得在不同的网络环境内，网关不需要因为网络环境不同而对VCL比特流进行重构和重编码。</p>
 <p>H.264 的基本流由一系列NALU （Network Abstraction Layer Unit ）组成，不同的NALU数据量各不相同。H.264 草案指出[2]，当数据流是储存在介质上时，在每个NALU 前添加起始码：0x000001或者0x00001，用来指示一个 NALU的起始和终止位置。在这样的机制下，在码流中检测起始码，作为一个NALU得起始标识，当检测到下一个起始码时，当前NALU结束。每个NALU单元由一个字节的 NALU头（NALU Header）和若干个字节的载荷数据（RBSP）组成。其中NALU 头的格式如图 所示：<br><img src="https://i.imgur.com/XsS95oo.png" alt=""></p>
 <pre><code>F:    forbidden_zero_bit.1 位，如果有语法冲突，则为 1。
     当网络识别此单元存在比特错误时，可将其设为 1，以便接收方丢掉该单元。
@@ -472,7 +470,7 @@ NRI:    nal_ref_idc.2 位，用来指示该NALU 的重要性等级。
 
 Type：5 位，指出NALU 的类型。具体如表所示：
 </code></pre><p><img src="https://i.imgur.com/jdw4rh1.jpg" alt=""></p>
-<p>####1.3.2、NALU分片分析<br><img src="https://i.imgur.com/N2jBUEe.png" alt=""></p>
+<h4 id="1-3-2、NALU分片分析"><a href="#1-3-2、NALU分片分析" class="headerlink" title="1.3.2、NALU分片分析"></a>1.3.2、NALU分片分析</h4><p><img src="https://i.imgur.com/N2jBUEe.png" alt=""></p>
 <p>我们还是接着看最上面图的码流对应的数据来层层分析，以00 00 00 01分割之后的下一个字节就是NALU类型，将其转为二进制数据后，解读顺序为从左往右算，如下:<br>（1）第1位禁止位，值为1表示语法出错<br>（2）第2~3位为参考级别<br>（3）第4~8为是nal单元类型</p>
 <p>例如上面00000001后有67,68以及65</p>
 <p>其中<strong>0x67</strong>的二进制码为：</p>
@@ -485,14 +483,13 @@ Type：5 位，指出NALU 的类型。具体如表所示：
 <pre><code>0110 0101
 </code></pre><p>4-8为00101，转为十进制5，参考图：5对应IDR图像中的片(I帧)</p>
 <p><strong>所以判断是否为I帧的算法为： （NALU类型  &amp; 0001  1111） = 5   即   NALU类型  &amp; 31 = 5<br>比如0x65 &amp; 31 = 5</strong></p>
-<p>####1.3.3、NALU打包方案<br>对于每一个NALU，根据其包含的数据量的不同，其大小也有差异。在IP网络中，当要传输的IP 报文大小超过最大传输单元MTU（Maximum Transmission Unit ）时就会产生IP分片情况。在以太网环境中可传输的最大 IP 报文（MTU）的大小为 1500 字节。如果发送的IP数据包大于MTU，数据包就会被拆开来传送，这样就会产生很多数据包碎片，增加丢包率，降低网络速度。对于视频传输而言，若RTP 包大于MTU 而由底层协议任意拆包，可能会导致接收端播放器的延时播放甚至无法正常播放。因此对于大于MTU 的NALU 单元，必须进行拆包处理。<br>RFC3984 给出了3 中不同的RTP 打包方案：</p>
+<h4 id="1-3-3、NALU打包方案"><a href="#1-3-3、NALU打包方案" class="headerlink" title="1.3.3、NALU打包方案"></a>1.3.3、NALU打包方案</h4><p>对于每一个NALU，根据其包含的数据量的不同，其大小也有差异。在IP网络中，当要传输的IP 报文大小超过最大传输单元MTU（Maximum Transmission Unit ）时就会产生IP分片情况。在以太网环境中可传输的最大 IP 报文（MTU）的大小为 1500 字节。如果发送的IP数据包大于MTU，数据包就会被拆开来传送，这样就会产生很多数据包碎片，增加丢包率，降低网络速度。对于视频传输而言，若RTP 包大于MTU 而由底层协议任意拆包，可能会导致接收端播放器的延时播放甚至无法正常播放。因此对于大于MTU 的NALU 单元，必须进行拆包处理。<br>RFC3984 给出了3 中不同的RTP 打包方案：</p>
 <p>（1）Single NALU Packet:在一个RTP 包中只封装一个NALU，在本文中对于小于 1400字节的NALU 便采用这种打包方案。</p>
 <p>（2）Aggregation Packet:在一个RTP 包中封装多个NALU，对于较小的NALU 可以采用这种打包方案，从而提高传输效率。</p>
 <p>（3）Fragmentation Unit:一个NALU 封装在多个RTP包中，在本文中，对于大于1400字节的NALU 便采用这种方案进行拆包处理。</p>
-<p>####1.3.4、单个NAL单元包<br><img src="https://i.imgur.com/8U8MX1R.png" alt=""></p>
+<h4 id="1-3-4、单个NAL单元包"><a href="#1-3-4、单个NAL单元包" class="headerlink" title="1.3.4、单个NAL单元包"></a>1.3.4、单个NAL单元包</h4><p><img src="https://i.imgur.com/8U8MX1R.png" alt=""></p>
 <p>定义在此的NAL单元包必须只包含一个。这意味聚合包和分片单元不可以用在单个NAL 单元包中。并且RTP序号必须符合NAL单元的解码顺序。NAL单元的第一字节和RTP荷载头第一个字节重合。如图3。打包H264码流时，只需在帧前面加上12字节的RTP头即可。</p>
-<p>####1.3.5、分片单元（FU-A)</p>
-<p><img src="https://i.imgur.com/TTFYKK9.png" alt=""></p>
+<h4 id="1-3-5、分片单元（FU-A"><a href="#1-3-5、分片单元（FU-A" class="headerlink" title="1.3.5、分片单元（FU-A)"></a>1.3.5、分片单元（FU-A)</h4><p><img src="https://i.imgur.com/TTFYKK9.png" alt=""></p>
 <p>分片只定义于单个NAL单元不用于任何聚合包。NAL单元的一个分片由整数个连续NAL单元字节组成。每个NAL单元字节必须正好是该NAL单元一个分片的一部分。相同NAL单元的分片必须使用递增的RTP序号连续顺序发送(第一和最后分片之间没有其他的RTP包）。相似，NAL单元必须按照RTP顺序号的顺序装配。</p>
 <p>当一个NAL单元被分片运送在分片单元(FUs)中时，被引用为分片NAL单元。STAPs,MTAPs不可以被分片。 FUs不可以嵌套。 即, 一个FU 不可以包含另一个FU。运送FU的RTP时戳被设置成分片NAL单元的NALU时刻。</p>
 <p>上图表示FU-A的RTP荷载格式。FU-A由1字节的分片单元指示图5，1字节的分片单元头（图6），和分片单元荷载组成</p>
@@ -529,7 +526,7 @@ R: 1 bit 保留位必须设置为0，接收者必须忽略该位
                             说明是关键帧（关键帧就是独立桢，不以其他帧图像做参考）
 </code></pre><p><strong>打包时，FUindicator的F、NRI是NAL Header中的F、NRI，Type是28；FU Header的S、E、R分别按照分片起始位置设置，Type是NAL Header中的Type。</strong></p>
 <p><strong>解包时，取FU indicator的前三位和FU Header的后五位，即0110 0101（0x65）为NAL类型。</strong></p>
-<p>###1.4、RTP荷载PS流<br>PS封装：Program Stream(程序流)，与之对应的还有TS封装-Transport Stream(传输流)，俗称枪版视频</p>
+<h3 id="1-4、RTP荷载PS流"><a href="#1-4、RTP荷载PS流" class="headerlink" title="1.4、RTP荷载PS流"></a>1.4、RTP荷载PS流</h3><p>PS封装：Program Stream(程序流)，与之对应的还有TS封装-Transport Stream(传输流)，俗称枪版视频</p>
 <p>针对H264 做如下PS 封装：每个IDR NALU 前一般都会包含SPS、PPS 等NALU，因此将SPS、PPS、IDR 的NALU 封装为一个PS 包，包括ps 头，然后加上PS system header，PS system map，PES header+h264 raw data。</p>
 <p>所以一个IDR NALU PS 包由外到内顺序是：</p>
 <pre><code>PSheader| PS system header | PS system Map | PES header | h264 raw data
@@ -594,8 +591,7 @@ _______________________________________________________________
 7)        G.729 音频流： 0x99；
 
 8)       SVAC音频流： 0x9B
-</code></pre><p>####1.4.1、PS封装的包头</p>
-<p><img src="https://i.imgur.com/LG3xzRw.png" alt=""></p>
+</code></pre><h4 id="1-4-1、PS封装的包头"><a href="#1-4-1、PS封装的包头" class="headerlink" title="1.4.1、PS封装的包头"></a>1.4.1、PS封装的包头</h4><p><img src="https://i.imgur.com/LG3xzRw.png" alt=""></p>
 <p>1)        <strong>Pack start code</strong>：包起始码字段，值为0x000001BA的位串，用来标志一个包的开始。</p>
 <p>2)        <strong>System clock reference base，system clock reference extenstion</strong>：系统时钟参考字段。</p>
 <p>3)        <strong>Pack stuffing length</strong> ：包填充长度字段，3 位整数，规定该字段后填充字节的个数</p>
@@ -893,7 +889,7 @@ Byte.13 fe    1111 1110
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作总结"><span class="nav-number">1.</span> <span class="nav-text">#工作总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工作总结"><span class="nav-number">1.</span> <span class="nav-text">工作总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、RTP分析"><span class="nav-number">1.1.</span> <span class="nav-text">1、RTP分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2、RTP首部详解"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2、RTP首部详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1、码流分析"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1.2.1、码流分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3、RTP荷载H-264码流"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3、RTP荷载H.264码流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-1、H-264基本流的结构"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">1.3.1、H.264基本流的结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-2、NALU分片分析"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">1.3.2、NALU分片分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-3、NALU打包方案"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">1.3.3、NALU打包方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-4、单个NAL单元包"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">1.3.4、单个NAL单元包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-5、分片单元（FU-A"><span class="nav-number">1.1.3.5.</span> <span class="nav-text">1.3.5、分片单元（FU-A)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4、RTP荷载PS流"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4、RTP荷载PS流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-1、PS封装的包头"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">1.4.1、PS封装的包头</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
