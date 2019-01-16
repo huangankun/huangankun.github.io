@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="流媒体服务框架测试," />
 
 
 
@@ -79,16 +79,24 @@
 
 
 
-<meta name="description" content="NO GAME NO LIFE">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ankun Huang">
-<meta property="og:url" content="http://yoursite.com/categories/随笔/index.html">
+<meta name="description" content="#工作总结 ###使用SRS测试RTMP的直播延时 ####SRS简介SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装">
+<meta name="keywords" content="流媒体服务框架测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SRS测试rtmp延时">
+<meta property="og:url" content="http://yoursite.com/2019/01/14/20190114/index.html">
 <meta property="og:site_name" content="Ankun Huang">
-<meta property="og:description" content="NO GAME NO LIFE">
+<meta property="og:description" content="#工作总结 ###使用SRS测试RTMP的直播延时 ####SRS简介SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/Ew9nhj3.png">
+<meta property="og:image" content="https://i.imgur.com/75OYdtz.png">
+<meta property="og:image" content="https://i.imgur.com/COXga2c.png">
+<meta property="og:image" content="https://i.imgur.com/i30JXHe.png">
+<meta property="og:image" content="https://i.imgur.com/Z63o89I.png">
+<meta property="og:updated_time" content="2019-01-15T11:46:02.219Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ankun Huang">
-<meta name="twitter:description" content="NO GAME NO LIFE">
+<meta name="twitter:title" content="SRS测试rtmp延时">
+<meta name="twitter:description" content="#工作总结 ###使用SRS测试RTMP的直播延时 ####SRS简介SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装">
+<meta name="twitter:image" content="https://i.imgur.com/Ew9nhj3.png">
 
 
 
@@ -118,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/随笔/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/01/14/20190114/"/>
 
 
 
 
 
-  <title>分类: 随笔 | Ankun Huang</title>
+  <title>SRS测试rtmp延时 | Ankun Huang</title>
   
 
 
@@ -143,7 +151,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -285,55 +293,229 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>随笔<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/14/20190114/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ankun Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ankun Huang">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/09/18/随笔-Markdown/" itemprop="url">
-              
-                <span itemprop="name">随笔-Markdown</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">SRS测试rtmp延时</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-18T23:51:04+08:00"
-              content="2018-09-18" >
-          09-18
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-14T22:16:00+08:00">
+                2019-01-14
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/14/20190114/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/14/20190114/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/01/14/20190114/" class="leancloud_visitors" data-flag-title="SRS测试rtmp延时">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#工作总结</p>
+<p>###使用SRS测试RTMP的直播延时</p>
+<p>####SRS简介<br>SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成HLS、转封装成HDS、录制成FLV。SRS包含支大规模集群如CDN业务的关键特性，譬如RTMP多级集群、VHOST虚拟服务器、无中断服务Reload、HTTP-FLV集群。此外，SRS还提供丰富的应用接口，包括HTTP回调、安全策略Security、HTTP API接口、RTMP测速。SRS在源站和CDN集群中都得到了广泛的应用Applications</p>
+<a id="more"></a>
+<p><strong>PS：SRS只适用于Linux系统，其它系统下的编译需要自行配置相关依赖</strong></p>
+<p><a href="https://github.com/ossrs/srs/wiki/v2_CN_Home" target="_blank" rel="noopener">官方详细wiki</a></p>
+<p>####SRS配置RTMP推流</p>
+<p><a href="https://github.com/ossrs/srs/wiki/v1_CN_SampleRTMP" target="_blank" rel="noopener">RTMP部署实例</a></p>
+<p>初次编译时的编译坑会报<strong>http-parser-2.1 error</strong>：</p>
+<p><a href="https://github.com/ossrs/srs/pull/1256" target="_blank" rel="noopener">Fix compile http-parser-2.1 fallthrouth error in gcc7 #1256</a></p>
+<p>####Windows下ffmpeg推流录屏</p>
+<pre><code>ffmpeg -f gdigrab -i desktop -vcodec libx264 -f flv rtmp://192.168.198.129/live/livestream
+</code></pre><p>然后用vlc播放即可</p>
+<p><img src="https://i.imgur.com/Ew9nhj3.png" alt=""></p>
+<p>延时：<strong>13.071s</strong></p>
+<p>####低延时设置<br><a href="https://github.com/ossrs/srs/wiki/v1_CN_LowLatency" target="_blank" rel="noopener">低延时直播应用</a></p>
+<p>考虑延时较高，根据官方wiki修改<strong>./conf/rtmp.conf</strong>,粘贴如下代码到文本覆盖即可</p>
+<pre><code># the config for srs to delivery RTMP
+# @see https://github.com/ossrs/srs/wiki/v1_CN_SampleRTMP
+# @see full.conf for detail config.
+
+listen              1935;
+max_connections     1000;
+daemon              off;
+srs_log_tank        console;
+vhost __defaultVhost__ {
+# whether cache the last gop.
+# if on, cache the last gop and dispatch to client,
+#   to enable fast startup for client, client play immediately.
+# if off, send the latest media data to client,
+#   client need to wait for the next Iframe to decode and show the video.
+# set to off if requires min delay;
+# set to on if requires client fast startup.
+# default: on
+gop_cache       off;
+# the max live queue length in seconds.
+# if the messages in the queue exceed the max length, 
+# drop the old whole gop.
+# default: 30
+queue_length    10;
+}
+</code></pre><p>再次播放延时如图：<strong>10.26s</strong>，有所改善<br><img src="https://i.imgur.com/75OYdtz.png" alt=""></p>
+<p>####Linux下ffmpeg推流录屏<br>安装ffmpeg</p>
+<pre><code>添加源：sudo add-apt-repository ppa:djcj/hybrid
+更新源：sudo apt-get update
+下载安装：sudo apt-get install ffmpeg
+</code></pre><p>录屏命令</p>
+<pre><code>ffmpeg -f x11grab -i :0.0 -f flv rtmp://192.168.198.129/live/livestream
+</code></pre><p>然后用vlc播放即可，RTMP的配置采用的是低延时设置,延时8.538s<br>    <img src="https://i.imgur.com/COXga2c.png" alt=""></p>
+<p>####官方的RTMP低延时设置，与<a href="https://github.com/ossrs/srs/wiki/v1_CN_LowLatency" target="_blank" rel="noopener">低延时直播应用</a>不同</p>
+<p><a href="https://github.com/ossrs/srs/wiki/v2_CN_SampleRealtime" target="_blank" rel="noopener">RTMP低延时配置</a></p>
+<p>还是在linux底下播放如图延时：<strong>6.439s</strong>，画质明显变低<br><img src="https://i.imgur.com/i30JXHe.png" alt=""></p>
+<p>在Windows底下播放如图延时：<strong>9.43s</strong><br><img src="https://i.imgur.com/Z63o89I.png" alt=""></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/流媒体服务框架测试/" rel="tag"># 流媒体服务框架测试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/11/20190111/" rel="next" title="media flash server测试rtmp延时">
+                <i class="fa fa-chevron-left"></i> media flash server测试rtmp延时
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/16/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -341,6 +523,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -602,6 +791,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

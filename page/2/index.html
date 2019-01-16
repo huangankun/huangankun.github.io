@@ -82,7 +82,7 @@
 <meta name="description" content="NO GAME NO LIFE">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ankun Huang">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Ankun Huang">
 <meta property="og:description" content="NO GAME NO LIFE">
 <meta property="og:locale" content="zh-Hans">
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
 
 
 
@@ -300,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/16/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/20190102/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ankun Huang">
@@ -319,7 +319,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/16/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2019/01/02/20190102/" itemprop="url">RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧</a></h1>
         
 
         <div class="post-meta">
@@ -331,8 +331,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-16T08:13:11+08:00">
-                2019-01-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-02T22:16:00+08:00">
+                2019-01-02
               </time>
             
 
@@ -350,8 +350,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/16/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/16/hello-world/" itemprop="commentCount"></span>
+                <a href="/2019/01/02/20190102/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/02/20190102/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -359,7 +359,7 @@
 
           
           
-             <span id="/2019/01/16/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2019/01/02/20190102/" class="leancloud_visitors" data-flag-title="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -392,16 +392,370 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <p>###UAC（User Agent Client）和UAS（User Agent Server）###<br>SIP协议采用Client/Server模型。每一个请求（Request）触发服务器的一个操作；每个操作被称为方法（Method）；每个请求除了指明具体方法外，还携带了一系列的头域（Header field）,这些头域携带了各种业务信息；除了头域外，消息中还可以携带任意类型的消息体（Body），呼叫中最常使用的SDP信息就是通过消息体在Client和Server之间传递的。</p>
+<p>Server从接收到请求到处理完毕，要回复多个临时响应(Response)，和一个终结响应(Response)，终结响应有且只有一个。请求和他的所有响应构成一个事务（Transaction），一个完整的呼叫过程包含多个事务，比如呼叫建立和呼叫释放就是两个相互独立的事务。用户代理（User Agent）是发起或者接收呼叫的逻辑实体。</p>
+<p>用户代理客户端-UAC（User Agent Client），用于发起请求；用户代理服务器-UAS（User Agent Server），用于接收请求。UAC/UAS的划分是针对一个事务的。在一个呼叫中的多个事务里，UAC和UAS的角色是可以互换的。例如在A和B的呼叫中，A向B发起呼叫，在呼叫建立的事务中，A是UAC，B是UAS；呼叫结束时，B先挂机，在呼叫释放的事务中，B是UAC，A是UAS。换句话说，每个一般的UA都是UAS和UAC的结合体。UA的实际物理形态有：IP Phone，SoftPhone，GateWay……</p>
+<p>Proxy Server作为一个网络逻辑实体代理客户端转发请求或者响应；同Proxy Server类似的还有一种设备是B2BUA，顾名思义，就是背背的两个UA组成的一个逻辑实体，它作为UAS终结一个事务，同时作为UAC发起另外一个事务。Proxy Server同B2BUA相比，Proxy Server是一个事务传递过程中的中间节点，而B2BUA将一个事务转变成另一个事务。</p>
+<p>在SIP组网中还包括Location Server、Registrar、Redirect Server，分别负责维护地址映射表，注册管理，呼叫重定向。他们和Proxy Server 可以在同一台设备上也可以运行于不同的设备上。SIP Server是Proxy Server、Location Server、Registrar、Redirect Server的总称。SIP Server采用B2BUA模型。接受请求端为UAS端，代理转发或主动发起请求端为UAC端，整个SIPServr为UAC/UAS的组合体。通过UAC/UAS之间消息交互完成会话的建立、改变、结束的阶段。SIP Server协助网关交换媒体信息，但不参与会话建立后媒体流传输。 </p>
+<p>###一个基于 osip 库的 UAC 和 UAS 的代码整理</p>
+<p>####<a href="https://www.cnblogs.com/freezyh/p/7855051.html" target="_blank" rel="noopener">MarkdownPad2使用代码高亮插件</a></p>
+<p>####<a href="https://blog.csdn.net/fengxinlinux/article/details/73719034" target="_blank" rel="noopener">MarkdownPad2使用C++模板时“&lt;&gt;”的内容无法显示</a></p>
+<hr>
+<p>###UAC</p>
+<pre class="prettyprint lang-cpp"> 
+/**
+ * 一个使用了 osip 和 eXosip 库的 UAC 代理客户端的演示程序
+ * 
+ * - 只是简单的演示了使用了 osip 和 eXosip2 库的 UAC 代理客户端的如下几个功能：
+ * * i 发起呼叫 INVITE 请求
+ * * h 挂断会话
+ * * s 执行方法 INFO 
+ * * m 执行方法 MESSAGE
+ * 
+ * 编 译：g++ -I/usr/local/include -L/usr/local/lib ua_client.cpp -o ua_client -leXosip2 -losip2 -losipparser2 -lpthread
+ * 
+ */
 
+#include &lt;osip2/osip_mt.h&gt;
+#include &lt;eXosip2/eXosip.h&gt;
+
+#include &lt;netinet/in.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;sys/types.h&gt;
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main(int argc, char* argv[])
+{
+    eXosip_event_t *je;
+    osip_message_t *reg = NULL;
+    osip_message_t *invite = NULL;
+    osip_message_t *ack = NULL;
+    osip_message_t *info = NULL;
+    osip_message_t *message = NULL;
+    int call_id, dialog_id;
+    int i,flag;
+    int flag1 = 1;
+    int id;
+
+    string strIdentity = "sip:136@133.37.55.136";
+    string strRegisterer = "sip:133.37.55.136:5060"; // server ip
+
+    string strSrcCall = "sip:136@133.37.55.136";
+    string strDestCall = "sip:136@133.37.55.136:5060"; // server ip
+
+
+    char command;
+    char tmp[4096];
+    char localip[128];
+
+    string strHelp = string("\n\t--> 命令字符 功能描述 <--\n\n") +="" "\t\tr="" 向服务器注册\n"="" "\t\tc="" 取消注册\n"="" "\t\ti="" 发起呼叫请求\n"="" "\t\th="" 挂断\n"="" "\t\tq="" 退出程序\n"="" "\t\ts="" 执行方法="" info\n"="" "\t\tm="" message\n"="" "\t\te="" 帮助\n\n";="" cout="" <<="" strhelp;="" string="" strmsg;="" i="eXosip_init" ();="" if="" (i="" !="0)" {="" "\t--=""> Couldn't initialize eXosip! <--\n"; return="" -1;="" }="" else="" {="" cout="" <<="" "\t--=""> eXosip_init successfully! <-- \n\n";="" }="" i="eXosip_listen_addr" (ipproto_udp,="" null,="" 5061,="" af_inet,="" 0);="" if="" (i="" !="0)" {="" exosip_quit="" ();="" cerr="" <<="" "\n\t--=""> Couldn't initialize transport layer! <-- \n\n";="" return="" -1;="" }="" flag="1;" while="" (flag)="" {="" cout="" <<="" "请输入一个命令字符：\t";="" cin="">> command;
+
+        switch (command)
+        {
+        case 'r':
+            cout << "\n\t--> This modal isn't commpleted! \n" << endl;
+            break;
+
+        case 'i': // 初始化的 INVITE 请求
+            i = eXosip_call_build_initial_invite (&invite, 
+                                                  strDestCall.c_str(), 
+                                                  strSrcCall.c_str(), 
+                                                  NULL, 
+                                                  "This is a call for a conversation");
+            if (i != 0)
+            {
+                cout << "\n --> Intial INVITE failed! <-- 0="" \n";="" break;="" }="" 符合="" sdp="" 格式,="" 其中属性="" a="" 是自定义格式,也就是说可以存放自己的信息,="" 但是只能是两列,比如帐户信息="" 但是经测试,格式:="" v="" o="" t必不可少,原因未知,估计是协议栈在传输时需要检查的="" strmsg="string("v=0\r\n")" +="" "o="anonymous" in="" ip4="" 0.0.0.0\r\n"="" "t="1" 10\r\n"="" "a="username:bluesea\r\n"" osip_message_set_body="" (invite,="" strmsg.c_str(),="" strmsg.length());="" osip_message_set_content_type="" "application="" sdp");="" 这里使用了锁机制以保证同步="" exosip_lock="" ();="" i="eXosip_call_send_initial_invite" (invite);="" exosip_unlock="" flag1="1;" while="" (flag1)="" {="" je="eXosip_event_wait" (0,="" 200);="" if="" (je="=" null)="" cout="" <<="" "\n\t--=""> No response or the time is over! <--\n" <<="" endl;="" break;="" }="" switch="" (je-="">type)
+                {
+                case EXOSIP_CALL_INVITE:
+                    cout << "\n\t--> a new invite reveived! <--\n" <<="" endl;="" break;="" announce="" processing="" by="" a="" remote="" app="" case="" exosip_call_proceeding:="" cout="" "\n\t--=""> proceeding! <--\n" <<="" endl;="" break;="" announce="" ringback="" case="" exosip_call_ringing:="" cout="" "\n\t--=""> ringing! <--\n" <<="" "\n\tcall_id="" is="" "="" je-="">cid 
+                         << ", dialog_id is " << je->did << endl;
+                    break;
+
+                // 收到请求，表示连接成功，下面发送回复确认
+                case EXOSIP_CALL_ANSWERED:
+                    cout << "\n\t--> ok! connected! <--\n" <<="" endl;="" call_id="je-">cid;
+                    dialog_id = je->did;
+                    cout << "\n\tcall_id is " << je->cid 
+                         << ", dialog_id is " << je->did << endl;
+                    eXosip_call_build_ack (je->did, &ack);
+                    eXosip_call_send_ack (je->did, ack);
+                    flag1 = 0;
+                    break;
+
+                case EXOSIP_CALL_CLOSED:
+                    cout << "\n\t--> the other sid closed! <--\n" <<="" endl;="" break;="" case="" exosip_call_ack:="" cout="" "\n\t--=""> ACK received! <--\n" <<="" endl;="" break;="" default:="" cout="" "\n\t--=""> other response!\n" <<endl; break;="" }="" exosip_event_free="" (je);="" case="" 'h':="" cout="" <<="" "\n\t--=""> Holded ! \n" << endl;
+
+            eXosip_lock ();
+            eXosip_call_terminate (call_id, dialog_id);
+            eXosip_unlock ();
+            break;
+
+        case 'c':
+            cout << "\n\t--> This modal isn't commpleted! \n" << endl;
+            break;
+
+        case 's':
+            // 传输 INFO 方法
+            eXosip_call_build_info (dialog_id, &info);
+
+            snprintf (tmp , 4096, "hello,bluesea");
+            osip_message_set_body (info, tmp, strlen(tmp));
+
+            // 格式可以任意设定, text/plain 代表文本信息
+            osip_message_set_content_type (info, "text/plain");
+            eXosip_call_send_request (dialog_id, info);
+            break;
+
+        case 'm':
+            // 传输 MESSAGE方法,也就是即时消息，
+            // 和 INFO 方法相比，主要区别，是 MESSAGE 不用建立连接，直接传输信息，
+            // 而 INFO 必须在建立 INVITE 的基础上传输。
+            cout << "\n\t--> the mothed :MESSAGE \n" << endl;
+            eXosip_message_build_request (&message, 
+                                          "MESSAGE", 
+                                          strDestCall.c_str(), 
+                                          strSrcCall.c_str(), 
+                                          NULL);
+            strMsg = "message: hello bluesea!";
+            osip_message_set_body (message, strMsg.c_str(), strMsg.length());
+
+            // 假设格式是xml
+            osip_message_set_content_type (message, "text/xml");
+            eXosip_message_send_request (message);
+            break;
+
+        case 'q':
+            eXosip_quit ();
+            cout << "\n\t--> Exit the setup! \n" << endl;;
+            flag = 0;
+            break;
+
+        case 'e':
+            cout << strHelp << endl;
+            break;
+
+        default:
+            cout << "\n\t--> 不支持的命令 <--\n" <<="" endl;="" break;="" }="" return="" 0;="" <="" pre="">
+
+<p>###UAS</p>
+<pre class="prettyprint lang-cpp"> 
+/**
+ * 一个使用了 osip 和 eXosip 库的 UAS 代理服务端的演示程序
+ * 
+ * - 只是简单的演示了使用了 osip 和 eXosip2 库的 UAS 代理服务端的如下几个功能：
+ * 
+ * 编 译：g++ -I/usr/local/include -L/usr/local/lib ua_server.cpp -o ua_server -leXosip2 -losip2 -losipparser2 -lpthread
+ * 
+ */
+
+#include &lt;eXosip2/eXosip.h&gt
+
+#include &lt;netinet/in.h&gt
+#include &lt;sys/socket.h&gt
+#include &lt;sys/types.h&gt
+
+#include &lt;iostream&gt
+#include &lt;fstream&gt
+#include &lt;string&gt
+
+using namespace std;
+
+int main()
+{
+    eXosip_event_t *je = NULL;
+    osip_message_t *ack = NULL;
+    osip_message_t *invite = NULL;
+    osip_message_t *answer = NULL;
+    sdp_message_t *remote_sdp = NULL;
+    int call_id, dialog_id;
+    int i,j;
+    int id;
+
+    char *sour_call = "sip:136@133.37.55.136";
+    char *dest_call = "sip:136@133.37.55.136:5061"; //client ip/port
+
+    char command;
+    char tmp[4096];
+    char localip[128];
+    int pos = 0;
+
+    // 初始化 sip
+    i = eXosip_init ();
+    if (i != 0)
+    {
+        cerr << "\n\t--> Can't initialize eXosip!\n";
+        return -1;
+    }
+    else
+    {
+        cout << "\n\t--> eXosip_init successfully!\n";
+    }
+
+    i = eXosip_listen_addr (IPPROTO_UDP, NULL, 5060, AF_INET, 0);
+    if (i != 0)
+    {
+        eXosip_quit ();
+        cerr << "\n\t--> eXosip_listen_addr error! Couldn't initialize transport layer!\n";
+    }
+
+    for(;;)
+    {
+        // 侦听是否有消息到来
+        je = eXosip_event_wait (0, 50); 
+
+        // 协议栈带有此语句,具体作用未知
+        eXosip_lock ();
+        eXosip_default_action (je);
+        eXosip_automatic_refresh ();
+        eXosip_unlock ();
+
+        if (je == NULL) // 没有接收到消息，继续
+        {
+            continue;
+        }
+
+        switch (je->type)
+        {
+        case EXOSIP_MESSAGE_NEW: // 新的消息到来
+            cout << "\n\t*** EXOSIP_MESSAGE_NEW!\n" << endl;
+
+            if (MSG_IS_MESSAGE (je->request)) // 如果接收到的消息类型是 MESSAGE
+            {
+                {
+                    osip_body_t *body;
+                    osip_message_get_body (je->request, 0, &body); 
+                    cout << "I get the msg is: " << body->body << endl;
+                }
+
+                // 按照规则，需要回复 OK 信息
+                eXosip_message_build_answer (je->tid, 200, &answer);
+                eXosip_message_send_answer (je->tid, 200, answer);
+            }
+            break;
+
+        case EXOSIP_CALL_INVITE: // INVITE 请求消息
+            // 得到接收到消息的具体信息
+            cout << "\n\tReceived a INVITE msg from " << je->request->req_uri->host 
+                 << " : " << je->request->req_uri->port 
+                 << ", username is " << je->request->req_uri->username << endl;
+
+            // 得到消息体,认为该消息就是 SDP 格式.
+            remote_sdp = eXosip_get_remote_sdp (je->did);
+            call_id = je->cid;
+            dialog_id = je->did;
+
+            eXosip_lock ();
+
+            eXosip_call_send_answer (je->tid, 180, NULL);
+            i = eXosip_call_build_answer (je->tid, 200, &answer);
+            if (i != 0)
+            {
+                cout << "\n\t--> This request msg is invalid! Cann't response!\n" << endl;
+                eXosip_call_send_answer (je->tid, 400, NULL);
+            }
+            else
+            {
+                snprintf (tmp, 4096,
+                    "v=0\r\n"
+                    "o=anonymous 0 0 IN IP4 0.0.0.0\r\n"
+                    "t=1 10\r\n"
+                    "a=username:rainfish\r\n"
+                    "a=password:123\r\n");
+
+                // 设置回复的SDP消息体,下一步计划分析消息体
+                // 没有分析消息体，直接回复原来的消息，这一块做的不好。
+                osip_message_set_body (answer, tmp, strlen(tmp));
+                osip_message_set_content_type (answer, "application/sdp");
+
+                eXosip_call_send_answer (je->tid, 200, answer);
+                cout << "\n\t--> send 200 over!" << endl;
+            }
+
+            eXosip_unlock ();
+
+            // 显示出在 sdp 消息体中的 attribute 的内容,里面计划存放我们的信息
+            cout << "\n\t--> The INFO is :\n" ;
+            while (!osip_list_eol ( &(remote_sdp->a_attributes), pos))
+            {
+                sdp_attribute_t *at;
+
+                //这里解释了为什么在SDP消息体中属性a里面存放必须是两列
+                at = (sdp_attribute_t *) osip_list_get ( &remote_sdp->a_attributes, pos);
+                cout << "\n\t" << at->a_att_field 
+                     << " : " << at->a_att_value << endl;
+
+                pos ++;
+            }
+            break;
+
+        case EXOSIP_CALL_ACK:
+            cout << "\n\t--> ACK recieved!\n" << endl;
+            // printf ("the cid is %s, did is %s\n", je->did, je->cid); 
+            break;
+
+        case EXOSIP_CALL_CLOSED:
+            cout << "\n\t--> the remote hold the session!\n" << endl;
+            // eXosip_call_build_ack(dialog_id, &ack);
+            // eXosip_call_send_ack(dialog_id, ack); 
+            i = eXosip_call_build_answer (je->tid, 200, &answer);
+            if (i != 0)
+            {
+                printf ("This request msg is invalid!Cann't response!\n");
+                eXosip_call_send_answer (je->tid, 400, NULL);
+            }
+            else
+            {
+                eXosip_call_send_answer (je->tid, 200, answer);
+                cout << "\n\t--> bye send 200 over!\n";
+            } 
+            break;
+
+        case EXOSIP_CALL_MESSAGE_NEW:
+
+            cout << "\n\t*** EXOSIP_CALL_MESSAGE_NEW\n" << endl;
+            if (MSG_IS_INFO(je->request) ) // 如果传输的是 INFO 方法
+            {
+                eXosip_lock ();
+                i = eXosip_call_build_answer (je->tid, 200, &answer);
+                if (i == 0)
+                {
+                    eXosip_call_send_answer (je->tid, 200, answer);
+                }
+
+                eXosip_unlock ();
+
+                {
+                    osip_body_t *body;
+                    osip_message_get_body (je->request, 0, &body);
+                    cout << "the body is " << body->body << endl;
+                }
+            }
+            break; 
+
+        default:
+            cout << "\n\t--> Could not parse the msg!\n" << endl;
+        }
+    } 
+
+    return 0;
+}
+</pre>
+
+<p>###<a href="http://www.360doc.com/content/11/1009/15/496343_154624612.shtml" target="_blank" rel="noopener">RTP(Real-Time Transport Protocol), RTCP(Real-Time Transport Control Protocol), RSVP(Resource Reservation Protocol)</a></p>
+<p>###<a href="https://baike.baidu.com/item/qos/404053?fr=aladdin" target="_blank" rel="noopener">QoS(Quality of Service)</a><br>QoS（Quality of Service，服务质量）指一个网络能够利用各种基础技术，为指定的网络通信提供更好的服务能力, 是网络的一种安全机制， 是用来解决网络延迟和阻塞等问题的一种技术。 在正常情况下，如果网络只用于特定的无时间限制的应用系统，并不需要QoS，比如Web应用，或E-mail设置等。但是对关键应用和多媒体应用就十分必要。当网络过载或拥塞时，QoS 能确保重要业务量不受延迟或丢弃，同时保证网络的高效运行。在RFC 3644上有对QoS的说明。</p>
+<p>###QoS三种服务模型</p>
+<p><strong>Best-Effort service（尽力而为服务模型）</strong>：Best-Effort服务模型是一个单一的服务模型，也是最简单的服务模型。对Best-Effort服务模型，网络尽最大的可能性来发送报文。但对延时、可靠性等性能不提供任何保证。</p>
+<p>Best-Effort服务模型是网络的缺省服务模型，通过FIFO（first in first out 先入先出）队列来实现。它适用于绝大多数网络应用，如FTP、E-Mail等</p>
+<p><strong>Integrated service（综合服务模型，简称Int-Serv）</strong>：Int-Serv服务模型Int-Serv是一个综合服务模型，它可以满足多种QoS需求。该模型使用资源预留协议（RSVP），RSVP运行在从源端到目的端的每个设备上，可以监视每个流，以防止其消耗资源过多。这种体系能够明确区分并保证每一个业务流的服务质量，为网络提供最细粒度化的服务质量区分。</p>
+<p>但是，Inter-Serv模型对设备的要求很高，当网络中的数据流数量很大时，设备的存储和处理能力会遇到很大的压力。Inter-Serv模型可扩展性很差，难以在Internet核心网络实施。</p>
+<p><strong>Differentiated service（区分服务模型，简称Diff-Serv）</strong>：Diff-Serv服务模型Diff-Serv是一个多服务模型，它可以满足不同的QoS需求。与Int-Serv不同，它不需要通知网络为每个业务预留资源。区分服务实现简单，扩展性较好。</p>
+<p>###<a href="https://blog.csdn.net/tq08g2z/article/details/77773129" target="_blank" rel="noopener">Wireshark 抓包分析 RTSP/RTP/RTCP 基本工作过程</a></p>
+<p><img src="https://i.imgur.com/v8oz6Jv.jpg" alt=""></p>
+</--\n"></endl;></--\n"></--\n"></--\n"></--\n"></--\n"></--\n"></--\n"></--></--></--></--\n";></--\n\n")></pre>
           
         
       
@@ -449,7 +803,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/14/20190114/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/18/关于宠物/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ankun Huang">
@@ -468,7 +822,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/14/20190114/" itemprop="url">SRS测试rtmp延时</a></h1>
+                <a class="post-title-link" href="/2018/10/18/关于宠物/" itemprop="url">关于宠物</a></h1>
         
 
         <div class="post-meta">
@@ -480,8 +834,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-14T22:16:00+08:00">
-                2019-01-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-18T20:23:30+08:00">
+                2018-10-18
               </time>
             
 
@@ -499,8 +853,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/14/20190114/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/14/20190114/" itemprop="commentCount"></span>
+                <a href="/2018/10/18/关于宠物/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/18/关于宠物/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -508,7 +862,7 @@
 
           
           
-             <span id="/2019/01/14/20190114/" class="leancloud_visitors" data-flag-title="SRS测试rtmp延时">
+             <span id="/2018/10/18/关于宠物/" class="leancloud_visitors" data-flag-title="关于宠物">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -540,12 +894,10 @@
 
       
         
-          <p>#工作总结</p>
-<p>###使用SRS测试RTMP的直播延时</p>
-<p>####SRS简介<br>SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成HLS、转封装成HDS、录制成FLV。SRS包含支大规模集群如CDN业务的关键特性，譬如RTMP多级集群、VHOST虚拟服务器、无中断服务Reload、HTTP-FLV集群。此外，SRS还提供丰富的应用接口，包括HTTP回调、安全策略Security、HTTP API接口、RTMP测速。SRS在源站和CDN集群中都得到了广泛的应用Applications</p>
+          <h2 id="关于宠物-《孤独有你：人与宠物，谁更寂寞》"><a href="#关于宠物-《孤独有你：人与宠物，谁更寂寞》" class="headerlink" title="关于宠物-《孤独有你：人与宠物，谁更寂寞》"></a>关于宠物-《孤独有你：人与宠物，谁更寂寞》</h2><p><img src="https://i.imgur.com/1lHoIf3.jpg" alt=""><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/01/14/20190114/#more" rel="contents">
+            <a class="btn" href="/2018/10/18/关于宠物/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -596,7 +948,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/11/20190111/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/28/python从入门到实践/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ankun Huang">
@@ -615,7 +967,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/11/20190111/" itemprop="url">media flash server测试rtmp延时</a></h1>
+                <a class="post-title-link" href="/2018/09/28/python从入门到实践/" itemprop="url">python从入门到实践</a></h1>
         
 
         <div class="post-meta">
@@ -627,8 +979,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-11T22:16:00+08:00">
-                2019-01-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-28T09:46:55+08:00">
+                2018-09-28
               </time>
             
 
@@ -646,8 +998,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/11/20190111/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/11/20190111/" itemprop="commentCount"></span>
+                <a href="/2018/09/28/python从入门到实践/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/28/python从入门到实践/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -655,7 +1007,7 @@
 
           
           
-             <span id="/2019/01/11/20190111/" class="leancloud_visitors" data-flag-title="media flash server测试rtmp延时">
+             <span id="/2018/09/28/python从入门到实践/" class="leancloud_visitors" data-flag-title="python从入门到实践">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -687,12 +1039,10 @@
 
       
         
-          <p>#工作总结</p>
-<p>###使用media flash server测试rtmp延时</p>
-<p>####media flash server概述：<br>Adobe Media Server也叫Adobe Flash Media Server（FMS），是Adobe出品的一款流媒体服务器，它使用Adobe传统的流媒体协议RTMP（实时消息协议）提供视频的点播和直播服务。</p>
+          <h1 id="Python模块安装Pygame安装"><a href="#Python模块安装Pygame安装" class="headerlink" title="Python模块安装Pygame安装"></a>Python模块安装Pygame安装</h1><h2 id="参考书籍《Python编程从入门到实践》"><a href="#参考书籍《Python编程从入门到实践》" class="headerlink" title="参考书籍《Python编程从入门到实践》"></a>参考书籍《Python编程从入门到实践》</h2>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/01/11/20190111/#more" rel="contents">
+            <a class="btn" href="/2018/09/28/python从入门到实践/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -743,7 +1093,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/10/20190110/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/设计模式-Lexi文本编辑器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ankun Huang">
@@ -762,7 +1112,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/10/20190110/" itemprop="url">live555测试rtsp延时</a></h1>
+                <a class="post-title-link" href="/2018/09/21/设计模式-Lexi文本编辑器/" itemprop="url">设计模式-Lexi文本编辑器</a></h1>
         
 
         <div class="post-meta">
@@ -774,8 +1124,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-10T22:16:00+08:00">
-                2019-01-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-21T06:39:15+08:00">
+                2018-09-21
               </time>
             
 
@@ -793,8 +1143,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/10/20190110/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/10/20190110/" itemprop="commentCount"></span>
+                <a href="/2018/09/21/设计模式-Lexi文本编辑器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/21/设计模式-Lexi文本编辑器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -802,7 +1152,7 @@
 
           
           
-             <span id="/2019/01/10/20190110/" class="leancloud_visitors" data-flag-title="live555测试rtsp延时">
+             <span id="/2018/09/21/设计模式-Lexi文本编辑器/" class="leancloud_visitors" data-flag-title="设计模式-Lexi文本编辑器">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -834,13 +1184,11 @@
 
       
         
-          <p>#工作总结</p>
-<p>###使用live555搭建RTSP的媒体服务</p>
-<p>####Live555概述：<br>live555是一个为流媒体提供解决方案的跨平台C++开源项目，它实现了对标准流媒体传输协议如RTP/RTCP、RTSP、SIP等的支持。live555能在Linux，Mac OS X，Windows和QNX等多个平台编译和运行。目前，它被用于流化、接收和处理MPEG、H.264、H.265、H.263+、DV等视频，以及MPEG（MP3的编码）、AAC、PCM等音频。由于良好的扩展性，live555可轻松支持其他的音视频编码格式，相关功能已经被添加到多款流行的播放器中，比如说VLC和MPlayer。</p>
-<p>更多介绍详见官网：<a href="http://www.live555.com/" target="_blank" rel="noopener">http://www.live555.com/</a></p>
+          <h1 id="Lexi文本编辑器"><a href="#Lexi文本编辑器" class="headerlink" title="Lexi文本编辑器"></a>Lexi文本编辑器</h1><hr>
+<h2 id="涉及的模式"><a href="#涉及的模式" class="headerlink" title="涉及的模式"></a>涉及的模式</h2><h3 id="1-Composite-表示文档的物理结构"><a href="#1-Composite-表示文档的物理结构" class="headerlink" title="1. Composite-表示文档的物理结构"></a>1. Composite-表示文档的物理结构</h3><h3 id="2-Strategy-允许不同的格式化算法"><a href="#2-Strategy-允许不同的格式化算法" class="headerlink" title="2. Strategy-允许不同的格式化算法"></a>2. Strategy-允许不同的格式化算法</h3><h3 id="3-Decorator-修饰用户界面"><a href="#3-Decorator-修饰用户界面" class="headerlink" title="3. Decorator-修饰用户界面"></a>3. Decorator-修饰用户界面</h3><h3 id="4-Abstract-Factory-支持多视感标准"><a href="#4-Abstract-Factory-支持多视感标准" class="headerlink" title="4. Abstract Factory-支持多视感标准"></a>4. Abstract Factory-支持多视感标准</h3><h3 id="5-Bridge-允许多个窗口平台"><a href="#5-Bridge-允许多个窗口平台" class="headerlink" title="5. Bridge-允许多个窗口平台"></a>5. Bridge-允许多个窗口平台</h3><h3 id="6-Command-支持撤销用户操作"><a href="#6-Command-支持撤销用户操作" class="headerlink" title="6. Command-支持撤销用户操作"></a>6. Command-支持撤销用户操作</h3><h3 id="7-Iterator-访问和遍历对象结构"><a href="#7-Iterator-访问和遍历对象结构" class="headerlink" title="7. Iterator-访问和遍历对象结构"></a>7. Iterator-访问和遍历对象结构</h3><h3 id="8-Visitor-允许无限扩充分析能力而又不会使文档结构的实现复杂化"><a href="#8-Visitor-允许无限扩充分析能力而又不会使文档结构的实现复杂化" class="headerlink" title="8. Visitor-允许无限扩充分析能力而又不会使文档结构的实现复杂化"></a>8. Visitor-允许无限扩充分析能力而又不会使文档结构的实现复杂化</h3>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/01/10/20190110/#more" rel="contents">
+            <a class="btn" href="/2018/09/21/设计模式-Lexi文本编辑器/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -891,7 +1239,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/09/20190115/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/19/设计模式-初探/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ankun Huang">
@@ -910,7 +1258,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/09/20190115/" itemprop="url">SRS测试hls延时2</a></h1>
+                <a class="post-title-link" href="/2018/09/19/设计模式-初探/" itemprop="url">设计模式-初探</a></h1>
         
 
         <div class="post-meta">
@@ -922,8 +1270,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-09T22:16:00+08:00">
-                2019-01-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-19T18:51:56+08:00">
+                2018-09-19
               </time>
             
 
@@ -933,6 +1281,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -941,8 +1311,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/09/20190115/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/09/20190115/" itemprop="commentCount"></span>
+                <a href="/2018/09/19/设计模式-初探/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/19/设计模式-初探/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -950,7 +1320,7 @@
 
           
           
-             <span id="/2019/01/09/20190115/" class="leancloud_visitors" data-flag-title="SRS测试hls延时2">
+             <span id="/2018/09/19/设计模式-初探/" class="leancloud_visitors" data-flag-title="设计模式-初探">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -982,12 +1352,10 @@
 
       
         
-          <p>#工作总结</p>
-<p>###使用SRS测试hls的直播延时</p>
-<p>####SRS简介<br>SRS定位是运营级的互联网直播服务器集群，追求更好的概念完整性和最简单实现的代码。SRS提供了丰富的接入方案将RTMP流接入SRS，包括推送RTMP到SRS、推送RTSP/UDP/FLV到SRS、拉取流到SRS。SRS还支持将接入的RTMP流进行各种变换，譬如将RTMP流转码、转发给其他服务器、转封装成HTTP-FLV流、转封装成HLS、转封装成HDS、录制成FLV。SRS包含支大规模集群如CDN业务的关键特性，譬如RTMP多级集群、VHOST虚拟服务器、无中断服务Reload、HTTP-FLV集群。此外，SRS还提供丰富的应用接口，包括HTTP回调、安全策略Security、HTTP API接口、RTMP测速。SRS在源站和CDN集群中都得到了广泛的应用Applications</p>
+          <p><img src="https://i.imgur.com/AnkV6n2.jpg" alt=""><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/01/09/20190115/#more" rel="contents">
+            <a class="btn" href="/2018/09/19/设计模式-初探/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1038,7 +1406,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/09/20190109/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/18/随笔-Markdown/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ankun Huang">
@@ -1057,7 +1425,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/09/20190109/" itemprop="url">RED5测试rtmp延时</a></h1>
+                <a class="post-title-link" href="/2018/09/18/随笔-Markdown/" itemprop="url">随笔-Markdown</a></h1>
         
 
         <div class="post-meta">
@@ -1069,8 +1437,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-09T22:16:00+08:00">
-                2019-01-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-18T23:51:04+08:00">
+                2018-09-18
               </time>
             
 
@@ -1080,6 +1448,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1088,8 +1478,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/09/20190109/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/09/20190109/" itemprop="commentCount"></span>
+                <a href="/2018/09/18/随笔-Markdown/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/18/随笔-Markdown/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1097,7 +1487,7 @@
 
           
           
-             <span id="/2019/01/09/20190109/" class="leancloud_visitors" data-flag-title="RED5测试rtmp延时">
+             <span id="/2018/09/18/随笔-Markdown/" class="leancloud_visitors" data-flag-title="随笔-Markdown">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1129,598 +1519,10 @@
 
       
         
-          <p>#工作总结</p>
-<p>###使用RED5搭建RTMP的媒体服务</p>
-<p>####RED5概述：<br>Red5 是一个采用 Java 开发开源的 Flash 流媒体服务器。免费开源使软件更加容易扩展，下载后你可以对源代码进行修改；更加经济，比起 FMS 高昂的费用，Red5 能为一般的应用节约大笔费用；同时服务器端的 Java 面向对象语言比起 FMS 服务器端的 ActionScript2 语言更加成熟。鉴于 Red5 的种种优势，推出不久便被广大用户所接受。</p>
+          <p><img src="https://i.imgur.com/baNs84a.jpg" alt=""></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/01/09/20190109/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/08/20190108/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ankun Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ankun Huang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/08/20190108/" itemprop="url">nginx服务器下测试rtmp、hls延时2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-08T22:16:00+08:00">
-                2019-01-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/08/20190108/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/08/20190108/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/01/08/20190108/" class="leancloud_visitors" data-flag-title="nginx服务器下测试rtmp、hls延时2">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>#工作总结</p>
-<p>###使用ffmpeg录制屏幕</p>
-<p>使用命令行工具ffmpeg来录制屏幕，下面是几个示例</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/08/20190108/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/07/20190107/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ankun Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ankun Huang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/07/20190107/" itemprop="url">nginx服务器下测试rtmp、hls延时</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-07T22:16:00+08:00">
-                2019-01-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/07/20190107/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/07/20190107/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/01/07/20190107/" class="leancloud_visitors" data-flag-title="nginx服务器下测试rtmp、hls延时">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>#工作总结</p>
-<p>使用FFmpeg，可以快捷的录制屏幕，输出录制文件，也可通过UDP传输到远端播放器，实时播放。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/07/20190107/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/04/20190104/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ankun Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ankun Huang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/04/20190104/" itemprop="url">RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧3</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-04T22:16:00+08:00">
-                2019-01-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/04/20190104/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/04/20190104/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/01/04/20190104/" class="leancloud_visitors" data-flag-title="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧3">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>#工作总结</p>
-<p>3.2、系统标题<br><img src="https://i.imgur.com/C3nT1rF.png" alt=""><br>                                                           图8<br>Systemheader当且仅当pack是第一个数据包时才存在，即PS包头之后就是系统标题。取值0x000001BB的位串，指出系统标题的开始，暂时不需要处理，读取Header Length直接跳过即可。<br>3.3、节目映射流<br>Systemheader当且仅当pack是第一个数据包时才存在，即系统标题之后就是节目流映射。取值0x000001BC的位串，指出节目流映射的开始，暂时不需要处理，读取Header Length直接跳过即可。前5字节的结构同系统标题，见图8。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/04/20190104/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/20190103/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ankun Huang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ankun Huang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/03/20190103/" itemprop="url">RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T22:16:00+08:00">
-                2019-01-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/03/20190103/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/03/20190103/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/01/03/20190103/" class="leancloud_visitors" data-flag-title="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧2">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="工作总结"><a href="#工作总结" class="headerlink" title="#工作总结"></a>#工作总结</h2><p>##1、RTP分析<br><img src="https://i.imgur.com/22MikCj.png" alt=""></p>
-<p>###1.1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的</p>
-<p>###1.2、RTP首部详解<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/03/20190103/#more" rel="contents">
+            <a class="btn" href="/2018/09/18/随笔-Markdown/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1762,7 +1564,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
 
 

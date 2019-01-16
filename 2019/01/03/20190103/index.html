@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="流媒体协议," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="#工作总结##1、RTP分析 ###1.1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的 ###1.2、RTP首部详解">
+<meta name="keywords" content="流媒体协议">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧2">
+<meta property="og:url" content="http://yoursite.com/2019/01/03/20190103/index.html">
+<meta property="og:site_name" content="Ankun Huang">
+<meta property="og:description" content="#工作总结##1、RTP分析 ###1.1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的 ###1.2、RTP首部详解">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/22MikCj.png">
+<meta property="og:image" content="https://i.imgur.com/EGuGhBo.png">
+<meta property="og:image" content="https://i.imgur.com/XsS95oo.png">
+<meta property="og:image" content="https://i.imgur.com/jdw4rh1.jpg">
+<meta property="og:image" content="https://i.imgur.com/N2jBUEe.png">
+<meta property="og:image" content="https://i.imgur.com/8U8MX1R.png">
+<meta property="og:image" content="https://i.imgur.com/TTFYKK9.png">
+<meta property="og:image" content="https://i.imgur.com/qH3l0sc.png">
+<meta property="og:image" content="https://i.imgur.com/LG3xzRw.png">
+<meta property="og:image" content="https://i.imgur.com/xNNdmhG.png">
+<meta property="og:updated_time" content="2019-01-15T11:38:35.403Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧2">
+<meta name="twitter:description" content="#工作总结##1、RTP分析 ###1.1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的 ###1.2、RTP首部详解">
+<meta name="twitter:image" content="https://i.imgur.com/22MikCj.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'AVACU4EILG',
+      apiKey: 'a041e16d994ce6a2b39a7c86f7f0c5ff',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"输入关键字进行搜索","hits_empty":"找不到关于  ${query} 的文章","hits_stats":"共找到 ${hits} 篇文章，花了 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/03/20190103/"/>
+
+
+
+
+
+  <title>RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧2 | Ankun Huang</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ankun Huang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/20190103/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ankun Huang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ankun Huang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T22:16:00+08:00">
+                2019-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/03/20190103/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/03/20190103/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/01/03/20190103/" class="leancloud_visitors" data-flag-title="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧2">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="工作总结"><a href="#工作总结" class="headerlink" title="#工作总结"></a>#工作总结</h2><p>##1、RTP分析<br><img src="https://i.imgur.com/22MikCj.png" alt=""></p>
+<p>###1.1、IP是属于网络层部分的，UDP和RTP都是属于传输层部分的</p>
+<p>###1.2、RTP首部详解<br><a id="more"></a></p>
+<p>1)        <strong>V(Version)</strong>：RTP协议的版本号，占2位，当前协议版本号为2</p>
+<p>2)        <strong>P(Padding)</strong>：填充标志，占1位，如果P=1，则在该报文的尾部填充一个或多个额外的八位组，它们不是有效载荷的一部分。</p>
+<p>3)        <strong>X(Extension)</strong>：扩展标志，占1位，如果X=1，则在RTP报头后跟有一个扩展报头</p>
+<p>4)        <strong>CC(Contributing source identifiers count)</strong>：CSRC计数器，占4位，指示CSRC 标识符的个数（作用信源CSRC计数器）</p>
+<p>5)        <strong>M(Marker)</strong>: 标记，占1位，不同的有效载荷有不同的含义，对于视频，标记一帧的结束；对于音频，标记会话的开始。（对于分组中的重要事件可用该位标识）</p>
+<p>6)        <strong>PT(Payload)</strong>: 有效荷载类型，占7位，用于说明RTP报文中有效载荷的类型，如GSM音频、JPEM图像等,在流媒体中大部分是用来区分音频流和视频流的，这样便于客户端进行解析。</p>
+<p>7)        <strong>序列号(Sequence)</strong>：占16位，用于标识发送者所发送的RTP报文的序列号，每发送一个报文，序列号增1。这个字段当下层的承载协议用UDP的时候，网络状况不好的时候可以用来检查丢包。同时出现网络抖动的情况可以用来对数据进行重新排序，序列号的初始值是随机的，同时音频包和视频包的sequence是分别记数的。</p>
+<p>8)        <strong>时戳(Timestamp)</strong>：占32位，必须使用90 kHz 时钟频率。时戳反映了该RTP报文的第一个八位组的采样时刻。接收者使用时戳来计算延迟和延迟抖动，并进行同步控制。</p>
+<p>9)        <strong>同步信源(SSRC)标识符</strong>：占32位，用于标识同步信源。该标识符是随机选择的，参加同一视频会议的两个同步信源不能有相同的SSRC。</p>
+<p>10)    <strong>特约信源(CSRC)标识符</strong>：每个CSRC标识符占32位，可以有0～15个。每个CSRC标识了包含在该RTP报文有效载荷中的所有特约信源。</p>
+<p>注：基本的RTP说明并不定义任何头扩展本身，如果遇到X=1，需要特殊处理</p>
+<p>####1.2.1、码流分析</p>
+<pre><code>(80 e0 00 1e 00 00 d2 f0 00 00 00 00) 41 9b 6b 49     |    €?....??....A?kI
+
+e1 0f 26 53 02 1a ff06 59 97 1d d2 2e 8c 50 01         |    ?.&amp;S....Y?.?.?P.
+
+cc 13 ec 52 77 4e e50e 7b fd 16 11 66 27 7c b4         |    ?.?RwN?.{?..f&apos;|?
+
+f6 e1 29 d5 d6 a4 ef3e 12 d8 fd 6c 97 51 e7 e9         |    ??)????&gt;.??l?Q??
+
+cfc7 5e c8 a9 51 f6 82 65 d6 48 5a 86 b0 e0 8c         |    ??^??Q??e?HZ????
+</code></pre><p>RTP头部一共十二个字节</p>
+<p><strong>80</strong>十六进制转为二进制：1000 0000<br>与之对应的位数：</p>
+<pre><code>10        v：对应版本号为2.0
+0        p：填充标志
+0        x：扩展标志
+0000    cc：CSRC标识符个数
+</code></pre><p><strong>e0</strong>十六进制转为二进制：1110 0000<br>与之对应的位数：</p>
+<pre><code>1            M：标记
+110 0000    PT：有效荷载类型转十进制为96
+</code></pre><p><strong>00 1e</strong>十六进制转为十进制：30<br>与之对应的位数为</p>
+<pre><code>30:            序号
+</code></pre><p><strong>00 00 d2 f0</strong>转为十进制：54000<br>与之对应的位数为</p>
+<pre><code>54000：        时间戳
+</code></pre><p><strong>00 00 00 00</strong>转为十进制：0<br>与之对应的位数为</p>
+<pre><code>0：            同步信源SSRC
+</code></pre><p>例子二：</p>
+<p><img src="https://i.imgur.com/EGuGhBo.png" alt=""><br>如图一共标出的部分12个字节其中</p>
+<p><strong>80</strong>十六进制转为二进制：1000 0000<br>与之对应的位数：</p>
+<pre><code>10        v：对应版本号为2.0
+0        p：填充标志
+0        x：扩展标志
+0000    cc：CSRC标识符个数
+</code></pre><p><strong>e0</strong>十六进制转为二进制：0110 0000<br>与之对应的位数：</p>
+<pre><code>0            M：标记
+110 0000    PT：有效荷载类型转十进制为96
+</code></pre><p><strong>f1 a6</strong>十六进制转为十进制：61862<br>与之对应的位数为</p>
+<pre><code>62862:            序号
+</code></pre><p><strong>06 9d 36 80</strong>转为十进制：110986800<br>与之对应的位数为</p>
+<pre><code>110986800：        时间戳
+</code></pre><p><strong>2B 36 B4 F2</strong>转为十进制：725005554<br>与之对应的位数为</p>
+<pre><code>725005554：        同步信源SSRC
+</code></pre><p>经过转换后对应如图所示的分析均能够对应上。</p>
+<p>###1.3、RTP荷载H.264码流</p>
+<p>####1.3.1、H.264基本流的结构<br>  H.264 的基本流（elementary stream,ES）的结构分为两层，包括视频编码层（VCL）和网络适配层（NAL）。视频编码层负责高效的视频内容表示，而网络适配层负责以网络所要求的恰当的方式对数据进行打包和传送。引入NAL并使之与VCL分离带来的好处包括两方面：其一、使信号处理和网络传输分离，VCL 和NAL 可以在不同的处理平台上实现；其二、VCL 和NAL 分离设计，使得在不同的网络环境内，网关不需要因为网络环境不同而对VCL比特流进行重构和重编码。</p>
+<p>H.264 的基本流由一系列NALU （Network Abstraction Layer Unit ）组成，不同的NALU数据量各不相同。H.264 草案指出[2]，当数据流是储存在介质上时，在每个NALU 前添加起始码：0x000001或者0x00001，用来指示一个 NALU的起始和终止位置。在这样的机制下，在码流中检测起始码，作为一个NALU得起始标识，当检测到下一个起始码时，当前NALU结束。每个NALU单元由一个字节的 NALU头（NALU Header）和若干个字节的载荷数据（RBSP）组成。其中NALU 头的格式如图 所示：<br><img src="https://i.imgur.com/XsS95oo.png" alt=""></p>
+<pre><code>F:    forbidden_zero_bit.1 位，如果有语法冲突，则为 1。
+    当网络识别此单元存在比特错误时，可将其设为 1，以便接收方丢掉该单元。
+
+NRI:    nal_ref_idc.2 位，用来指示该NALU 的重要性等级。
+    值越大，表示当前NALU越重要。具体大于0 时取何值，没有具体规定。
+
+Type：5 位，指出NALU 的类型。具体如表所示：
+</code></pre><p><img src="https://i.imgur.com/jdw4rh1.jpg" alt=""></p>
+<p>####1.3.2、NALU分片分析<br><img src="https://i.imgur.com/N2jBUEe.png" alt=""></p>
+<p>我们还是接着看最上面图的码流对应的数据来层层分析，以00 00 00 01分割之后的下一个字节就是NALU类型，将其转为二进制数据后，解读顺序为从左往右算，如下:<br>（1）第1位禁止位，值为1表示语法出错<br>（2）第2~3位为参考级别<br>（3）第4~8为是nal单元类型</p>
+<p>例如上面00000001后有67,68以及65</p>
+<p>其中<strong>0x67</strong>的二进制码为：</p>
+<pre><code>0110 0111
+</code></pre><p>4-8为00111，转为十进制7，参考图：7对应序列参数集SPS</p>
+<p>其中<strong>0x68</strong>的二进制码为：</p>
+<pre><code>0110 1000
+</code></pre><p>4-8为01000，转为十进制8，参考图：8对应图像参数集PPS</p>
+<p>其中<strong>0x65</strong>的二进制码为：</p>
+<pre><code>0110 0101
+</code></pre><p>4-8为00101，转为十进制5，参考图：5对应IDR图像中的片(I帧)</p>
+<p><strong>所以判断是否为I帧的算法为： （NALU类型  &amp; 0001  1111） = 5   即   NALU类型  &amp; 31 = 5<br>比如0x65 &amp; 31 = 5</strong></p>
+<p>####1.3.3、NALU打包方案<br>对于每一个NALU，根据其包含的数据量的不同，其大小也有差异。在IP网络中，当要传输的IP 报文大小超过最大传输单元MTU（Maximum Transmission Unit ）时就会产生IP分片情况。在以太网环境中可传输的最大 IP 报文（MTU）的大小为 1500 字节。如果发送的IP数据包大于MTU，数据包就会被拆开来传送，这样就会产生很多数据包碎片，增加丢包率，降低网络速度。对于视频传输而言，若RTP 包大于MTU 而由底层协议任意拆包，可能会导致接收端播放器的延时播放甚至无法正常播放。因此对于大于MTU 的NALU 单元，必须进行拆包处理。<br>RFC3984 给出了3 中不同的RTP 打包方案：</p>
+<p>（1）Single NALU Packet:在一个RTP 包中只封装一个NALU，在本文中对于小于 1400字节的NALU 便采用这种打包方案。</p>
+<p>（2）Aggregation Packet:在一个RTP 包中封装多个NALU，对于较小的NALU 可以采用这种打包方案，从而提高传输效率。</p>
+<p>（3）Fragmentation Unit:一个NALU 封装在多个RTP包中，在本文中，对于大于1400字节的NALU 便采用这种方案进行拆包处理。</p>
+<p>####1.3.4、单个NAL单元包<br><img src="https://i.imgur.com/8U8MX1R.png" alt=""></p>
+<p>定义在此的NAL单元包必须只包含一个。这意味聚合包和分片单元不可以用在单个NAL 单元包中。并且RTP序号必须符合NAL单元的解码顺序。NAL单元的第一字节和RTP荷载头第一个字节重合。如图3。打包H264码流时，只需在帧前面加上12字节的RTP头即可。</p>
+<p>####1.3.5、分片单元（FU-A)</p>
+<p><img src="https://i.imgur.com/TTFYKK9.png" alt=""></p>
+<p>分片只定义于单个NAL单元不用于任何聚合包。NAL单元的一个分片由整数个连续NAL单元字节组成。每个NAL单元字节必须正好是该NAL单元一个分片的一部分。相同NAL单元的分片必须使用递增的RTP序号连续顺序发送(第一和最后分片之间没有其他的RTP包）。相似，NAL单元必须按照RTP顺序号的顺序装配。</p>
+<p>当一个NAL单元被分片运送在分片单元(FUs)中时，被引用为分片NAL单元。STAPs,MTAPs不可以被分片。 FUs不可以嵌套。 即, 一个FU 不可以包含另一个FU。运送FU的RTP时戳被设置成分片NAL单元的NALU时刻。</p>
+<p>上图表示FU-A的RTP荷载格式。FU-A由1字节的分片单元指示图5，1字节的分片单元头（图6），和分片单元荷载组成</p>
+<p><img src="https://i.imgur.com/qH3l0sc.png" alt=""></p>
+<pre><code>S: 1 bit 当设置成1,开始位指示分片NAL单元的开始。
+当跟随的FU荷载不是分片NAL单元荷载的开始，开始位设为0。
+
+E: 1 bit 当设置成1, 结束位指示分片NAL单元的结束
+即, 荷载的最后字节也是分片NAL单元的最后一个字节。
+当跟随的 FU荷载不是分片NAL单元的最后分片,结束位设置为0。
+
+R: 1 bit 保留位必须设置为0，接收者必须忽略该位
+</code></pre><p>打包时，原始的NAL头的前三位为FU indicator的前三位，原始的NAL头的后五位为FU header的后五位。</p>
+<p>取一段码流分析如下：</p>
+<p>80 60 01 0f 00 0e 10 00 00 00 00 00 <strong>7c 85</strong> 88 82 €`……….|???</p>
+<p>00 0a 7f ca 94 05 3b 7f 3e 7f fe 14 2b 27 26 f8 …??.;.&gt;.?.+’&amp;?</p>
+<p>89 88 dd 85 62 e1 6d fc 33 01 38 1a 10 35 f2 14 ????b?m?3.8..5?.</p>
+<p>84 6e 21 24 8f 72 62 f0 51 7e 10 5f 0d 42 71 12 ?n!$?rb?Q~._.Bq.</p>
+<p>17 65 62 a1 f1 44 dc df 4b 4a 38 aa 96 b7 dd 24 .eb??D??KJ8????$</p>
+<p>前12字节是RTP Header</p>
+<pre><code>7c是FU indicator
+
+85是FU Header
+</code></pre><p>FU indicator（0x7C）和FU Header（0x85）换成二进制如下</p>
+<pre><code>0111 1100 1000 0101
+</code></pre><p>按顺序解析如下：</p>
+<pre><code>0                           是F
+11                          是NRI
+11100                       是FU Type，这里是28，即FU-A
+1                           是S，Start，说明是分片的第一包
+0                           是E，End，如果是分片的最后一包，设置为1，这里不是
+0                           是R，Remain，保留位，总是0
+00101                        是NAl Type，这里是5
+                            说明是关键帧（关键帧就是独立桢，不以其他帧图像做参考）
+</code></pre><p><strong>打包时，FUindicator的F、NRI是NAL Header中的F、NRI，Type是28；FU Header的S、E、R分别按照分片起始位置设置，Type是NAL Header中的Type。</strong></p>
+<p><strong>解包时，取FU indicator的前三位和FU Header的后五位，即0110 0101（0x65）为NAL类型。</strong></p>
+<p>###1.4、RTP荷载PS流<br>PS封装：Program Stream(程序流)，与之对应的还有TS封装-Transport Stream(传输流)，俗称枪版视频</p>
+<p>针对H264 做如下PS 封装：每个IDR NALU 前一般都会包含SPS、PPS 等NALU，因此将SPS、PPS、IDR 的NALU 封装为一个PS 包，包括ps 头，然后加上PS system header，PS system map，PES header+h264 raw data。</p>
+<p>所以一个IDR NALU PS 包由外到内顺序是：</p>
+<pre><code>PSheader| PS system header | PS system Map | PES header | h264 raw data
+</code></pre><p>对于其它非关键帧的PS 包，就简单多了，直接加上PS头和PES 头就可以了。顺序为：</p>
+<pre><code>PS header | PES header | h264raw data
+</code></pre><p>把音频Audio也打包进PS 封装，也可以。当有音频数据时，将数据加上PES header 放到视频PES 后就可以了。顺序如下：</p>
+<pre><code>PSheader| PS system header | PS system Map | PES header(video) | PES header(audio) | h264 raw data
+
+PS header | PES header(video) | PES header(audio) | h264raw data
+</code></pre><p>GB28181 对RTP 传输的数据负载类型有规定（参考GB28181 附录B），负载类型中96-127</p>
+<p>RFC 1890                       AV Profile                   January 1996</p>
+<pre><code>PT         encoding      audio/video    clock rate    channels
+           name          (A/V)          (Hz)          (audio)
+_______________________________________________________________
+0          PCMU          A              8000          1
+1          1016          A              8000          1
+2          G721          A              8000          1
+3          GSM           A              8000          1
+4          unassigned    A              8000          1
+5          DVI4          A              8000          1
+6          DVI4          A              16000         1
+7          LPC           A              8000          1
+8          PCMA          A              8000          1
+9          G722          A              8000          1
+10         L16           A              44100         2
+11         L16           A              44100         1
+12         unassigned    A
+13         unassigned    A
+14         MPA           A              90000        (see text)
+15         G728          A              8000          1
+16--23     unassigned    A
+24         unassigned    V
+25         CelB          V              90000
+26         JPEG          V              90000
+27         unassigned    V
+28         nv            V              90000
+29         unassigned    V
+30         unassigned    V
+31         H261          V              90000
+32         MPV           V              90000
+33         MP2T          AV             90000
+34--71     unassigned    ?
+72--76     reserved      N/A            N/A           N/A
+77--95     unassigned    ?
+96--127    dynamic       ?
+</code></pre><p>RFC2250 建议96 表示PS 封装，建议97 为MPEG-4，建议98 为H264</p>
+<p>即我们接收到的RTP 包首先需要判断负载类型，若负载类型为96，则采用PS 解复用，将音视频分开解码。若负载类型为98，直接按照H264 的解码类型解码</p>
+<pre><code>PS 包中的流类型（stream type）的取值如下：
+
+1)        MPEG-4 视频流： 0x10；
+
+2)        H.264 视频流： 0x1B；
+
+3)        SVAC 视频流： 0x80；
+
+4)        G.711 音频流： 0x90；
+
+5)        G.722.1 音频流： 0x92；
+
+6)        G.723.1 音频流： 0x93；
+
+7)        G.729 音频流： 0x99；
+
+8)       SVAC音频流： 0x9B
+</code></pre><p>####1.4.1、PS封装的包头</p>
+<p><img src="https://i.imgur.com/LG3xzRw.png" alt=""></p>
+<p>1)        <strong>Pack start code</strong>：包起始码字段，值为0x000001BA的位串，用来标志一个包的开始。</p>
+<p>2)        <strong>System clock reference base，system clock reference extenstion</strong>：系统时钟参考字段。</p>
+<p>3)        <strong>Pack stuffing length</strong> ：包填充长度字段，3 位整数，规定该字段后填充字节的个数</p>
+<p>80 60 53 1f 00 94 89 00 00 00 00 00 <strong>00 00 01 ba</strong> €`S..??……..?</p>
+<p>7e ff 3e fb 44 01 00 5f 6b f8 00 00 01 e0 14 53 ~.&gt;?D.._k?…?.S</p>
+<p>80 80 05 2f bf cf be d1 1c 42 56 7b 13 58 0a 1e €€./????.BV{.X..</p>
+<p>08 b1 4f 33 69 35 04 53 6d 33 a8 04 15 58 d9 21 .?O3i5.Sm3?..X?!</p>
+<p>97 41 b9 f1 75 3d 94 2b 1f bc 0b b2 b4 97 bf 93 ?A??u=?+.?.?????</p>
+<p>前12位是RTP Header，这里不再赘述；</p>
+<pre><code>00 00 01 ba
+</code></pre><p>前四个字节是包头起始码；</p>
+<p>接下来的9字节包括了SCR，SCRE，MUXRate，具体看上图</p>
+<pre><code>Byte.4    7e    01 111 1 10
+01    always set to 01
+111 System clock reference base    
+1    marker
+10    SCR base
+
+Byte.5    ff    11111111
+
+Byte.6    3e    00111110
+00111    cont.
+1        marker
+10        SCR base bits 14..0
+
+Byte.7    fb
+        cont.
+
+Byte.8    44    01000100
+01000    cont.
+1        marker
+00        SCR extension
+
+Byte.9    01
+0000000    
+1        marker
+
+Byte.10    00
+0        multiplex rate
+
+Byte.11    5f
+        is to be delivered to the decoder
+
+Byte.12    6b    01101011
+011010    cont.
+1        marker
+1        marker
+
+Byte.13 f8    1111 1000
+11111    reserved
+0        stuffing length in bytes
+</code></pre><p>最后一字节是保留位（0xf8），定义了是否有扩展，二进制如下（填充字节）,前5位跳过，后3位指示了扩展长度，这里是0.</p>
+<p>例二抓包码流<br><img src="https://i.imgur.com/xNNdmhG.png" alt=""><br>    00 00 01 ba<br>前四个字节是包头起始码；</p>
+<p>接下来的9字节包括了SCR，SCRE，MUXRate，具体看上图</p>
+<pre><code>Byte.4    44    01 000 1 00
+01    always     set to 01
+000 System     clock reference base    
+1    marker
+00    SCR base
+
+Byte.5    37    00110111
+
+Byte.6    cf    11001111
+11001    cont.
+1        marker
+11        SCR base bits 14..0
+
+Byte.7    a6    10100110
+10100110    cont.
+
+Byte.8    b4    10110100
+10110    cont.
+1        marker
+00        SCR extension
+
+Byte.9    01
+0000000    
+1        marker
+
+Byte.10    00
+0        multiplex rate
+
+Byte.11    fa    11111010
+11111010    is to be delivered to the decoder
+
+Byte.12    07    00000111
+000001    cont.
+1        marker
+1        marker
+
+Byte.13 fe    1111 1110
+11111    reserved
+110        stuffing length in bytes    6
+</code></pre><p>最后一字节是保留位（0xfe），定义了是否有扩展,前5位跳过，后3位指示了扩展长度，这里是6，这六个字节对应的是<strong>ff ff 00 00 3b af</strong>.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/流媒体协议/" rel="tag"># 流媒体协议</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/02/20190102/" rel="next" title="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧">
+                <i class="fa fa-chevron-left"></i> RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/04/20190104/" rel="prev" title="RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧3">
+                RTP\RTSP\RSVP\RTCP\SIP\QoS\MarkdownPad2技巧3 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Ankun Huang" />
+            
+              <p class="site-author-name" itemprop="name">Ankun Huang</p>
+              <p class="site-description motion-element" itemprop="description">NO GAME NO LIFE</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/huangankun" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:ankun.ace.huang@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/huangankun" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作总结"><span class="nav-number">1.</span> <span class="nav-text">#工作总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ankun Huang</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '5xLEMFr6C687TITqiSlvDEmA-gzGzoHsz',
+        appKey: 'UP36omNa5WbMPetKlS3yMWW9',
+        placeholder: 'comment',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("5xLEMFr6C687TITqiSlvDEmA-gzGzoHsz", "UP36omNa5WbMPetKlS3yMWW9");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
